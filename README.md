@@ -5,10 +5,10 @@ Internet Programming I: mini Project
 
 | Roll Number | Group Members        | ID (ETS)    | Github Profile |
 |-------------|----------------------|-------------|---------------------------|
-| 1           | Amanawit Behailu     | ETS0135/16  | ?????)
-| 2           | Amanuel Habtamu      | ETS0148/16  | ???)
-| 3           | Amanuel Ayele        | ETS0140/16  | [![Manuel's Avatar](https://avatars.githubusercontent.com/u/192098957?v=4&style=flat-square)](https://github.com/Manu3lde)
-| 4           | Amanuel Getachew     | ETS0147/16  | [!['s Avatar]https://???)]https://github.com?????)
+| 1           | Amanawit Behailu     | ETS0135/16  | [Amanawit22](http://github.com/Amanawit22) |
+| 2           | Amanuel Habtamu      | ETS0148/16  | [ZeAman77H](https://github.com/ZeAman77H) |
+| 3           | Amanuel Ayele        | ETS0140/16  | [Manu3lde](https://github.com/Manu3lde) |
+| 4           | Amanuel Getachew     | ETS0147/16  | |
 
 ## Project Description
 
