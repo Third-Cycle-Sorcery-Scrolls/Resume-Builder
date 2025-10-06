@@ -8,7 +8,7 @@ Internet Programming I: mini Project
 | 1           | Amanawit Behailu     | ETS0135/16  | [Amanawit22](http://github.com/Amanawit22) |
 | 2           | Amanuel Habtamu      | ETS0148/16  | [ZeAman77H](https://github.com/ZeAman77H) |
 | 3           | Amanuel Ayele        | ETS0140/16  | [Manu3lde](https://github.com/Manu3lde) |
-| 4           | Amanuel Getachew     | ETS0147/16  | |
+| 4           | Amanuel Getachew     | ETS0147/16  | [Amanuel-Getachew-K](https://github.com/Amanuel-Getachew-K)
 
 ## Project Description
 
