@@ -39,9 +39,8 @@ This project demonstrates key web development concepts learned in the **Internet
 resume-builder/
 │
 ├── index.html        # Main HTML file
-├── style.css         # Stylesheet
-├── script.js         # JavaScript logic
-├── images/           # Icons, logos, or profile photos
+├── src               # source code
+├── public/           # static resources
 └── README.md         # Project documentation
 ```
 
