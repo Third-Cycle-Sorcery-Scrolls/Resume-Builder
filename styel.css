@@ -1,0 +1,76 @@
+/* === Global Styles === */
+body {
+  font-family: Arial, sans-serif; /* Sets the main text font */
+  margin: 0; /* Removes browser’s default margin */
+  background-color: #f0f2f5; /* Light gray background behind resume */
+}
+
+/* === Main Container === */
+.container {
+  display: flex; /* Places sidebar and main content side by side */
+  max-width: 900px; /* Sets total width of the resume box */
+  margin: 40px auto; /* Centers the resume and adds space at top/bottom */
+  background-color: white; /* White background for the resume itself */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow effect */
+}
+
+/* === Sidebar (left side) === */
+.sidebar {
+  background-color: #203864; /* Dark blue background */
+  color: white; /* White text for contrast */
+  width: 30%; /* Sidebar takes 30% of total width */
+  padding: 30px 20px; /* Adds inner space */
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 1px; /* Slight spacing between letters */
+}
+
+.sidebar p {
+  line-height: 1.6; /* Adds space between lines */
+  font-size: 14px;
+}
+
+/* === Main Content (right side) === */
+.content {
+  width: 70%; /* Takes remaining space beside sidebar */
+  padding: 30px; /* Adds inner padding */
+}
+
+/* === Section Titles (like SKILLS, EXPERIENCE, etc.) === */
+h2 {
+  background-color: #203864; /* Blue title bar */
+  color: white; /* White text */
+  padding: 8px;
+  font-size: 14px;
+  letter-spacing: 1px; /* Adds spacing between letters */
+  margin-top: 0; /* Removes extra gap above heading */
+}
+
+/* === Section spacing === */
+section {
+  margin-bottom: 20px; /* Adds space between sections */
+}
+
+/* === Job Titles and Experience Details === */
+.job h3 {
+  margin: 5px 0;
+  color: #203864; /* Makes job titles dark blue */
+}
+
+/* === Lists and Text === */
+ul {
+  margin: 10px 0 10px 20px; /* Indent list items slightly */
+}
+
+ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+p, li {
+  font-size: 14px;
+  line-height: 1.5; /* Improves readability */
+}
