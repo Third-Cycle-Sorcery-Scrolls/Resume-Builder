@@ -1,0 +1,207 @@
+/* Overall Layout */
+#resume_preview {
+  width: 100%;
+  height: 100%;
+  background-color: #a7a6a6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#preview {
+  width: 60%;
+  height: 90%;
+  background-color: #fff;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================= LEFT SIDE ================= */
+.left-preview {
+  width: 38%;
+  background-color: #f5f5f5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.left-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background-color: #2e75c9;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.profile_image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  margin-top: 80px;
+  z-index: 10;
+}
+
+.name-title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.name-title .full-name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2e75c9;
+}
+
+.name-title .job-title {
+  font-size: 14px;
+  color: #555;
+}
+
+.section {
+  width: 80%;
+  margin-top: 25px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2e75c9;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section ul li {
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.section ul li i {
+  color: #2e75c9;
+  font-size: 14px;
+}
+
+.section.about p {
+  font-size: 13px;
+  color: #444;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+/* ================= RIGHT SIDE ================= */
+.right-preview {
+  width: 62%;
+  padding: 40px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.right-section {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.right-section h3 {
+  color: #2e75c9;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #2e75c9;
+  padding-bottom: 5px;
+}
+
+.item {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.item h4 {
+  font-size: 15px;
+  color: #333;
+  margin: 0;
+}
+
+.item p {
+  font-size: 13px;
+  color: #666;
+  margin: 2px 0;
+}
+
+.item small {
+  color: #999;
+  font-size: 12px;
+}
+
+/* Reference Section */
+.reference {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.reference div {
+  width: 48%;
+  font-size: 13px;
+}
+
+.reference strong {
+  color: #333;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 20px;
+  height: 100%;
+  /* margin-bottom: 20px; */
+}
+.items::before {
+  content: "";
+  height: 100%;
+  width: 3px;
+  opacity: 50%;
+  background-color: #2e75c9;
+  position: absolute;
+  left: 0;
+  top: 0;
+  /* margin-left: -10px; */
+  z-index: 10;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #2e75c9;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  margin-left: -24px;
+  margin-top: 6px;
+
+  z-index: 20;
+}
