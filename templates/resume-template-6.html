@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Habtamu's Resume</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Science+Gothic:wght@100..900&family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+        <style>
+            *{
+                margin: 0;
+                padding: 2px;
+                box-sizing: border-box;
+                border: 2px solid;
+            }
+            body {
+                height: 100vh;
+                border: 2px solid blue;
+            }
+            h1, h2 {
+                font-family: "Zalando Sans Expanded", sans-serif;
+            }
+            
+            header {
+                height: 20%;
+                padding: 10px;
+                margin: 10px 5px 20px;
+            }
+            .name-logo {
+                width: 30%;
+                float: left;
+            }
+            .name {
+                float: right;
+                width: 70%;
+            }
+            .container {
+                width: 100%;
+                display: flex;
+                gap: 20px;
+                padding: 20px;
+            }
+            aside {
+                width: 30%;
+            }
+            main {
+                width: 70%;
+            }
+            .skills-set{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .skills h2 {
+                display: block;
+                margin-bottom: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="name-logo">Logo</div>
+
+            <div class="name">
+                <h1>Name</h1>
+                
+                <div class="description">
+                    <p>Short personal description.</p>
+                    <p>Short personal description.</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <aside>
+                <section class="languages">
+                    <h2>Languages</h2>
+                    <div class="languages-set">
+                        <p>French <br>English</p>
+                        <p>French <br>English</p>
+                    </div>
+                </section>
+
+                <section class="awards">
+                    <h2>Awards</h2>
+                    <div class="awrds-set">
+                        <p>CSS Design Awards</p>
+                        <p>CSS Design Awards</p>
+                    </div>
+                </section>
+
+                <section class="contact">
+                    <h2>Contact</h2>
+                    <div class="contact-set">
+                        <p>Website<br>Mail<br>Instagram</p>
+                    </div>
+                </section>
+            </aside>
+            <main>
+                <section class="work-experience">
+                    <h2>Work Experience</h2>
+                    <p>UX/UI Designer & Illustrator</p>
+                    <p>UX/UI Designer & Illustrator</p>
+                    <p>Backend Developer</p>
+                </section>
+
+                <section class="education">
+                    <h2>Education</h2>
+                    <p>AASTU</p>
+                    <p>AASTU</p>
+                    <p>AAU></p>
+                </section>
+
+                <section class="skills">
+                    <h2>Skills</h2>
+                    <div class="skills-set">
+                        <p>Figma</p>
+                        <p>Web Development</p>
+                        <p>Backend</p>
+                        <p>Node.js</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>
