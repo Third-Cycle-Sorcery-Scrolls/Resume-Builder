@@ -38,10 +38,49 @@ This project demonstrates key web development concepts learned in the **Internet
 ```
 resume-builder/
 │
-├── index.html        # Main HTML file
-├── src               # source code
-├── public/           # static resources
-└── README.md         # Project documentation
+├── index.html                  ← Landing page
+├── choose-template.html        ← Template selection page
+├── resume-editor.html          ← Resume editing(Form) + live preview
+│
+├── templates/                  ← Resume templates
+│   ├── resume-template-1.html
+│   ├── resume-template-2.html
+│   ├── resume-template-3.html
+│   ├── resume-template-4.html
+│   ├── resume-template-5.html
+│   ├── resume-template-6.html
+│   └── .gitkeep
+│
+├── css/                        ← Stylesheets
+│   ├── base.css                ← Global css
+│   ├── landing-page.css        ← For index.html
+│   ├── template-selection.css  ← For choose-template.html
+│   ├── editor.css              ← For resume-editor.html
+│   ├── style-template-1.css
+│   ├── style-template-2.css
+│   ├── style-template-3.css
+│   ├── style-template-4.css
+│   ├── style-template-5.css
+│   ├── style-template-6.css
+│
+├── js/                         ← JavaScript files
+│   ├── templatePicker.js
+│   ├── templateLoader.js
+│   ├── livePreview.js
+│   ├── resumeDownload.js
+│
+├── assets/
+│   ├── preview-images/         ← Template previews
+│   │   ├── template1.png
+│   │   ├── template2.png
+│   │   ├── template3.png
+│   │   ├── template4.png
+│   │   ├── template5.png
+│   │   ├── template6.png
+│   │   └── .gitkeep
+│   ├── icons/                  ← UI icons
+│
+└── README.md
 ```
 
 ---
