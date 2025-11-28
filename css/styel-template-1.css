@@ -1,0 +1,68 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f2f5;
+}
+
+.container {
+  display: flex;
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+  background-color: #203864;
+  color: white;
+  width: 30%;
+  padding: 30px 20px;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.sidebar p {
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.content {
+  width: 70%;
+  padding: 30px;
+}
+
+h2 {
+  background-color: #203864;
+  color: white;
+  padding: 8px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+.job h3 {
+  margin: 5px 0;
+  color: #203864;
+}
+
+ul {
+  margin: 10px 0 10px 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+p, li {
+  font-size: 14px;
+  line-height: 1.5;
+}
