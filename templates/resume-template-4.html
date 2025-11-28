@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Resume Template</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style-template-4.css" />
+  </head>
+  <body>
+    <!-- this is the header -->
+    <div class="container">
+      <div class="header">
+        <h1 id="user_name">Amanuel Ayele</h1>
+        <p id="user_title">BACKEND DEVELOPER</p>
+      </div>
+
+      <div class="left">
+        <div class="avatar">
+          <img id="user_photo" src="#" alt="User Photo" />
+        </div>
+        <!-- summary -->
+        <div>
+          <div class="section-title">Summary</div>
+          <div class="summary" id="user_summary">
+            Short professional summary goes here.
+          </div>
+        </div>
+
+        <!-- education and trainingss -->
+        <div>
+          <div class="section-title">Education</div>
+          <div class="education" id="education_section">
+            <!-- JS will insert education items here -->
+            <p><strong>Degree / Field</strong></p>
+            <p>School Name</p>
+            <p>Year</p>
+          </div>
+        </div>
+
+        <!-- skills and ... -->
+        <div>
+          <div class="section-title">Skills</div>
+          <div id="skills_section">
+            <!-- JS will insert skill items -->
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>Very Important skill</span>
+                <span>70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width:70%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-label">
+                <span>also Very Important skill</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-fill" style="width:80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right section -->
+      <div class="right">
+        <div class="section-title">Professional Experience</div>
+
+        <!-- JOBS -->
+        <div id="experience_section">
+          <div class="job">
+            <div style="display:flex; justify-content:space-between;">
+              <h3 class="job-title">Job Title</h3>
+              <div class="job-date">Year - Year</div>
+            </div>
+            <div class="job-company">Company Name, Location</div>
+            <ul>
+              <li>Responsibility or achievement.</li>
+              <li>Responsibility or achievement.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
