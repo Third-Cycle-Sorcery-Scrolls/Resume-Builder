@@ -3,106 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Chen - Software Engineer Resume</title>
+    <title>Resume Template 5</title>
     <link rel="stylesheet" href="../css/style-template-5.css">
 </head>
 <body>
     <div class="resume-container">
+        <!-- Header -->
         <header class="header">
-            <h1>Michael Chen</h1>
+            <h1 data-field="fullName">Michael Chen</h1>
+
             <div class="contact-info">
-                <span>michael.chen@email.com</span>
-                <span>+1 (415) 555-7890</span>
-                <span>linkedin.com/in/michaelchen</span>
-                <span>github.com/michaelchen-dev</span>
+                <span data-field="email">michael.chen@email.com</span>
+                <span data-field="phone">+1 (415) 555-7890</span>
+                <span data-field="linkedin">linkedin.com/in/michaelchen</span>
+                <span data-field="github">github.com/michaelchen-dev</span>
             </div>
         </header>
-
+        <!-- Education -->
         <section class="section">
             <h2 class="section-title">Education</h2>
-            <div class="education-item">
+            <div class="education-item" data-field="education">
                 <h3>Stanford University</h3>
                 <p><strong>Degree:</strong> Master's in Computer Science</p>
                 <p><strong>Status:</strong> Graduated May 2023</p>
             </div>
-            <div class="education-item">
+
+            <div class="education-item" data-field="education">
                 <h3>University of California, Berkeley</h3>
                 <p><strong>Degree:</strong> Bachelor's in Computer Science</p>
                 <p><strong>Status:</strong> Graduated May 2021</p>
             </div>
         </section>
-
+        <!-- Certificates -->
         <section class="section">
             <h2 class="section-title">Certificates</h2>
-            <div class="certificate-links">
-                <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/123456789" target="_blank">
-                    https://www.coursera.org/account/accomplishments/specialization/certificate/123456789
-                </a>
-                <a href="https://www.aws.training/certification/certificate/987654321" target="_blank">
-                    https://www.aws.training/certification/certificate/987654321
-                </a>
+            <div class="certificate-links" data-field="certificates">
+                <a href="#" target="_blank">Coursera Certificate Link</a>
+                <a href="#" target="_blank">AWS Certification Link</a>
             </div>
         </section>
-
+        <!-- Skills -->
         <section class="section">
             <h2 class="section-title">Skills</h2>
+
             <div class="skills-container">
-                <div class="skill-category">
+
+                <div class="skill-category" data-field="skills">
                     <h3>Technical Skills</h3>
-                    <div class="skill-items">
-                        <p>Proficient in Java, Python, JavaScript, React, Node.js</p>
-                        <p><strong>Languages:</strong> English (Native), Mandarin (Intermediate)</p>
-                    </div>
+                    <p>Java, Python, JavaScript, React, Node.js</p>
+                    <p><strong>Languages:</strong> English (Native), Mandarin (Intermediate)</p>
                 </div>
-                <div class="skill-category">
+
+                <div class="skill-category" data-field="skills">
                     <h3>Problem Solving</h3>
-                    <div class="skill-items">
-                        <p>200+ leetcode problems solved</p>
-                        <p>Google Code Jam 2022 - Top 500</p>
-                    </div>
+                    <p>200+ LeetCode problems solved</p>
+                    <p>Google Code Jam 2022 – Top 500</p>
                 </div>
             </div>
         </section>
-
+        <!-- Work Experience -->
         <section class="section">
             <h2 class="section-title">Work Experience</h2>
-            <div class="experience-item">
+
+            <div class="experience-item" data-field="experience">
                 <h3>Software Engineer Intern</h3>
                 <p><strong>Google</strong> | June 2022 - August 2022</p>
                 <ul>
-                    <li>Developed features for Google Maps API improving performance by 15%</li>
-                    <li>Collaborated with cross-functional teams to implement new geolocation services</li>
+                    <li>Improved Google Maps API performance by 15%</li>
+                    <li>Developed geolocation features</li>
                 </ul>
             </div>
-            <div class="experience-item">
+
+            <div class="experience-item" data-field="experience">
                 <h3>Full Stack Developer</h3>
                 <p><strong>Tech Startup Inc.</strong> | September 2021 - May 2022</p>
                 <ul>
-                    <li>Built responsive web applications using React and Node.js</li>
-                    <li>Implemented RESTful APIs serving 10,000+ daily requests</li>
+                    <li>Built responsive web apps using React + Node.js</li>
+                    <li>Implemented RESTful APIs serving 10,000+ requests/day</li>
                 </ul>
             </div>
         </section>
-
+        <!-- Projects -->
         <section class="section">
             <h2 class="section-title">Projects</h2>
-            <div class="project-item">
+
+            <div class="project-item" data-field="projects">
                 <h3>TaskFlow - Productivity Application</h3>
-                <p>Full-stack task management application with real-time collaboration features</p>
-                <p><strong>Technologies:</strong> React, Node.js, MongoDB, Socket.io</p>
+                <p>Task management app with real-time collaboration</p>
+                <p><strong>Tech:</strong> React, Node.js, MongoDB, Socket.io</p>
             </div>
-            <div class="project-item">
+
+            <div class="project-item" data-field="projects">
                 <h3>HealthTrack - Fitness Tracking App</h3>
-                <p>Mobile application for tracking workouts and nutrition with data visualization</p>
-                <p><strong>Technologies:</strong> React Native, Firebase, Chart.js</p>
+                <p>Workout + nutrition tracking with visualizations</p>
+                <p><strong>Tech:</strong> React Native, Firebase, Chart.js</p>
             </div>
         </section>
-
+        <!-- Career Objective -->
         <section class="section">
             <h2 class="section-title">Career Objective</h2>
-            <div class="career-objective">
-                <p>Results-driven software engineer with 3+ years of experience building scalable web applications. Passionate about solving complex problems and creating efficient, user-friendly solutions. Seeking to leverage my technical expertise in a challenging software engineering role where I can contribute to innovative projects and continue growing as a developer.</p>
-            </div>
+            <p class="career-objective" data-field="objective">
+                Results-driven software engineer with experience building scalable apps.
+            </p>
         </section>
     </div>
 </body>
