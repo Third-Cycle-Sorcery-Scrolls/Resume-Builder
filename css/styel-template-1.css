@@ -1,68 +1,83 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background: #f2f0eb;
 }
 
-.container {
-  display: flex;
-  max-width: 900px;
-  margin: 40px auto;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.resume {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
 }
 
-.sidebar {
-  background-color: #203864;
-  color: white;
-  width: 30%;
-  padding: 30px 20px;
+.left {
+    padding: 40px 50px;
 }
 
-.sidebar h1 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
+.right {
+    background: #e8dfd5;
+    padding: 40px 30px;
 }
 
-.sidebar p {
-  line-height: 1.6;
-  font-size: 14px;
-}
-
-.content {
-  width: 70%;
-  padding: 30px;
+h1 {
+    margin: 10px 0;
 }
 
 h2 {
-  background-color: #203864;
-  color: white;
-  padding: 8px;
-  font-size: 14px;
-  letter-spacing: 1px;
-  margin-top: 0;
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-section {
-  margin-bottom: 20px;
+h3 {
+    margin: 15px 0 5px;
+    font-size: 17px;
 }
 
-.job h3 {
-  margin: 5px 0;
-  color: #203864;
+.role {
+    font-weight: bold;
+    color: #444;
+}
+
+.time {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
 }
 
 ul {
-  margin: 10px 0 10px 20px;
+    padding-left: 18px;
 }
 
-ul li {
-  margin-bottom: 5px;
-  font-size: 14px;
+.right img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
 }
 
-p, li {
-  font-size: 14px;
-  line-height: 1.5;
+
+.profile .title {
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 8px;
+}
+
+section {
+    margin-bottom: 35px;
+}
+
+.right section h2 {
+    margin-top: 30px;
+}
+
+@media(max-width: 850px) {
+    .resume {
+        grid-template-columns: 1fr;
+    }
 }
