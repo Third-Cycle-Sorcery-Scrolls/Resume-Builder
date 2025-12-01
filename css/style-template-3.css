@@ -13,16 +13,16 @@ body {
 }
 
 .sidebar {
-  background-color: #203864;
+  background-color: #0f3b47;
   color: white;
   width: 30%;
   padding: 30px 20px;
 }
 
 .sidebar h1 {
-  font-size: 24px;
+  font-size: 30px;
   margin-bottom: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .sidebar p {
@@ -38,9 +38,9 @@ body {
 h2 {
   background-color: #203864;
   color: white;
-  padding: 8px;
-  font-size: 14px;
-  letter-spacing: 1px;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
   margin-top: 0;
 }
 
@@ -51,6 +51,8 @@ section {
 .job h3 {
   margin: 5px 0;
   color: #203864;
+  font-size: 18px; 
+  font-weight: bold;
 }
 
 ul {
