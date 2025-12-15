@@ -1,0 +1,264 @@
+/* --- GLOBAL & LAYOUT STYLES --- */
+:root {
+  --accent: #1f6b73;
+  --muted: #6b7380;
+  --line: #e6eef0;
+  --bg: #f2f7f8;
+  --sidebar-width: 400px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  overflow: hidden; /*Prevent the body element from scroll only the childs like .panels can*/
+}
+
+/* --- LEFT PANEL: EDITOR --- */
+.editor-panel {
+  width: var(--sidebar-width);
+  background: white;
+  border-right: 1px solid #ddd;
+  height: 100%;
+  overflow-y: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.editor-panel h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.section-header {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent);
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.dynamic-list-item {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-remove {
+  background: #e74c3c;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+/* --- RIGHT PANEL: PREVIEW AREA --- */
+.preview-panel {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  background: #525659; /* Dark background to make paper pop */
+}
+
+/* --- YOUR RESUME TEMPLATE STYLES (Scoped to .resume-container) --- */
+.resume-container {
+  width: 900px; /* Fixed width for print consistency */
+  min-height: 1100px; /* Approximate A4 height */
+  background: white;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  border-radius: 2px; /* Sharper corners for paper look */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
+
+.header {
+  background: var(--accent);
+  grid-column: 1 / -1;
+  color: white;
+  text-align: center;
+  padding: 22px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 2px;
+  font-family: "Playfair Display", serif;
+}
+.header p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.left {
+  padding: 24px;
+  border-right: 1px solid var(--line);
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+  border: 6px solid white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  background-color: #ddd; /* Fallback color */
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block; /* Removes bottom space */
+}
+
+.section-title {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 20px 0 8px;
+}
+
+.contact div,
+.summary,
+.education p {
+  font-size: 13px;
+  margin: 4px 0;
+  word-wrap: break-word;
+}
+
+.skill-item {
+  margin: 10px 0;
+}
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+.skill-bar {
+  height: 8px;
+  background: #e9f2f2;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.skill-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.right {
+  padding: 28px;
+}
+
+.job {
+  margin-bottom: 20px;
+}
+.job-title {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 600;
+}
+.job-date {
+  font-size: 12px;
+  color: var(--muted);
+}
+.job-company {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 4px 0 10px;
+}
+.job ul {
+  font-size: 13px;
+  padding-left: 18px;
+  margin: 0;
+}
+.job li {
+  margin-bottom: 4px;
+}
+
+/* Print styles  Need a lot more to access the skills color and the accent bgs*/
+@media print {
+  body {
+    height: auto;
+    overflow: visible;
+  }
+  .editor-panel {
+    display: none;
+  }
+  .preview-panel {
+    display: block;
+    padding: 0;
+    background: white;
+  }
+  .resume-container {
+    box-shadow: none;
+    margin: 0;
+    width: 100%;
+  }
+}
