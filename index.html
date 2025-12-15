@@ -10,7 +10,14 @@
 <body>
     <header>
         <h1>Resume Builder</h1>
-        <nav></nav>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="choose-template.html" class="btn-nav">Get Started</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <section>
@@ -19,22 +26,142 @@
             <a href="choose-temlate.html">Get Started</a>
         </section>
 
-        <section class="template-previews">
+        <section class="templates" id="templates">
             <h3>Preview Templates</h3>
-            <div class="preview">
-                <img src="assets/preview-images/template1.png" alt="Template 1 preview">
-                <p>Template 1</p>
-                <img src="assets/preview-images/template1.png" alt="Template 1 preview">
-                <p>Template 1</p>
-                <img src="assets/preview-images/template1.png" alt="Template 1 preview">
-                <p>Template 1</p>
+            <p>Choose a template that matches your style and industry</p>
+            <div class="templates-grid">
+                <!-- Template 1 -->
+                <div class="template-card">
+                    <div class="template-preview">
+                        <img src="assets/preview-images/template1.png" alt="Template 1 - Modern" loading="lazy">
+                        <div class="template-overlay">
+                            <button class="btn-preview" data-template="1">Preview</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Template 1</h3>
+                        <p>Clean & contemporary design</p>
+                        <a href="choose-template.html?template=1" class="btn-template">Use This Template</a>
+                    </div>
+                </div>
+                
+                <!-- Template 2 -->
+                <div class="template-card">
+                    <div class="template-preview">
+                        <img src="assets/preview-images/template2.png" alt="Template 2 - Professional" loading="lazy">
+                        <div class="template-overlay">
+                            <button class="btn-preview" data-template="2">Preview</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Template 2</h3>
+                        <p>Corporate & formal style</p>
+                        <a href="choose-template.html?template=2" class="btn-template">Use This Template</a>
+                    </div>
+                </div>
+                
+                <!-- Template 3 -->
+                <div class="template-card">
+                    <div class="template-preview">
+                        <img src="assets/preview-images/template3.png" alt="Template 3 - Creative" loading="lazy">
+                        <div class="template-overlay">
+                            <button class="btn-preview" data-template="3">Preview</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Template 3</h3>
+                        <p>Artistic & unique layout</p>
+                        <a href="choose-template.html?template=3" class="btn-template">Use This Template</a>
+                    </div>
+                </div>
+                
+                <!-- Template 4 -->
+                <div class="template-card">
+                    <div class="template-preview">
+                        <img src="assets/preview-images/template4.png" alt="Template 4 - Minimal" loading="lazy">
+                        <div class="template-overlay">
+                            <button class="btn-preview" data-template="4">Preview</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Template 4</h3>
+                        <p>Simple & elegant design</p>
+                        <a href="choose-template.html?template=4" class="btn-template">Use This Template</a>
+                    </div>
+                </div>
+                
+                <!-- Template 5 -->
+                <div class="template-card">
+                    <div class="template-preview">
+                        <img src="assets/preview-images/template5.png" alt="Template 5 - Executive" loading="lazy">
+                        <div class="template-overlay">
+                            <button class="btn-preview" data-template="5">Preview</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Template 5</h3>
+                        <p>Leadership focused layout</p>
+                        <a href="choose-template.html?template=5" class="btn-template">Use This Template</a>
+                    </div>
+                </div>
+                
+                <!-- Template 6 (YOUR template) -->
+                <div class="template-card featured">
+                    <div class="template-badge">Popular</div>
+                    <div class="template-preview">
+                        <img src="assets/preview-images/template6.png" alt="Template 6 - Clean Professional" loading="lazy">
+                        <div class="template-overlay">
+                            <button class="btn-preview" data-template="6">Preview</button>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h3>Template 6</h3>
+                        <p>Stylish two-column design</p>
+                        <a href="choose-template.html?template=6" class="btn-template">Use This Template</a>
+                    </div>
+                </div>
             </div>
 
             <a href="choose-temlate.html">See All Templates</a>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025/26 Resume Builder - Built for Internet Programming Course.</p>
+        <div class="footer-section">
+            <h3>Resume Builder</h3>
+            <p>Creating professional resumes made simple, fast, and free.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Project</h4>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Team Members</h4>
+            <ul>
+                <li>Ahlam Ahmed</li>
+                <li>Alehegn Geta</li>
+                <li>Amanawit Behailu</li>
+                <li>Amanuel Ayele</li>
+                <li>Amanuel Getachew</li>
+                <li>Amanuel Habtamu</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Course</h4>
+            <p>Internet Programming</p>
+            <p>2025/26 Academic Year</p>
+            <p>Group Project</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025/26 Resume Builder - Built for Internet Programming Course. All rights reserved.</p>
+        <p>This project is for educational purposes only.</p>
+    </div>
     </footer>
+    <script src="js/landing-page.js"></script>
 </body>
 </html>
