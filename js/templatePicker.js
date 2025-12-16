@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedTemplateHtml = `templates/resume-template-${templateId}.html`;
 
     localStorage.setItem("selectedTemplateCSS", selectedCss);
-    localStorage.setItem("setedTemplateHTML", selectedTemplateHtml);
-    lec;
+    localStorage.setItem("selectedTemplateHTML", selectedTemplateHtml);
 
     window.location.href = "resume-editor.html";
   };
