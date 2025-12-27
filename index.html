@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume Builder</title>
-    <link rel="stylesheet" href="./src/global.css" />
-    <link rel="stylesheet" href="./src/sidebar.css" />
-    <link rel="stylesheet" href="./src/preview.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder</title>
 
-    <!-- roboto font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- font awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <!-- script -->
-  </head>
-  <body>
-    <!-- Sidebar to accept resume details -->
+  <!-- Landing page specific CSS -->
+  <link rel="stylesheet" href="./css/landing-page.css">
+</head>
+<body>
 
-    <!-- Resume Preview container -->
-    <section id="resume_preview">
-      <h2>Resume Preview</h2>
-      <div id="preview"></div>
-    </section>
-    <script src="./src/sidebar.js" type="module"></script>
-    <script>
-      // setupImagePreview();
-    </script>
-  </body>
+  <!-- ================= NAVIGATION ================= -->
+  <nav class="navbar">
+    <h1 class="logo">ResumeBuilder</h1>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="choose-template.html">Templates</a></li>
+      <li><a href="#features">Features</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <header class="hero">
+    <h2>Create Your Professional Resume</h2>
+    <p>
+      Build modern, professional resumes easily using our Resume Builder.
+      Choose a template, fill in your details, and download your resume in minutes.
+    </p>
+
+    <a href="choose-template.html" class="btn primary">
+      Build My Resume
+    </a>
+  </header>
+
+  <!-- ================= FEATURES SECTION ================= -->
+  <section id="features" class="features">
+    <h3>Why Use Our Resume Builder?</h3>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <h4>Live Preview</h4>
+        <p>See your resume update instantly as you type.</p>
+      </div>
+
+      <div class="feature-card">
+        <h4>Multiple Templates</h4>
+        <p>Choose from different professional resume designs.</p>
+      </div>
+
+      <div class="feature-card">
+        <h4>Download & Print</h4>
+        <p>Export your resume as a printable PDF.</p>
+      </div>
+
+      <div class="feature-card">
+        <h4>Responsive Design</h4>
+        <p>Works on desktop, tablet, and mobile devices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2025 Resume Builder | Internet Programming Project</p>
+  </footer>
+
+</body>
 </html>
