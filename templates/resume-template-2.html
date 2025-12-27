@@ -3,157 +3,197 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume Builder</title>
-    <link rel="stylesheet" href="./../css/style-template-2.css" />
+    <title>Lorna Alvarado - Professional Resume</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style-template-2.css" />
   </head>
   <body>
-    <div class="container">
-      <!-- Left Panel: Form -->
-      <div class="form-panel">
-        <div class="form-header">
-          <h1>Build Your Resume</h1>
-          <p>Create a professional resume in minutes</p>
+    <div class="resume">
+      <div class="header-accent"></div>
+
+      <!-- LEFT SIDEBAR -->
+      <div class="left">
+        <div class="photo-container">
+          <img
+            src="/assets//preview-images/profile-photo.jpg"
+            alt="Lorna Alvarado"
+          />
         </div>
 
-        <form id="resumeForm" class="resume-form">
-          <!-- Personal Info Section -->
-          <section class="form-section">
-            <h2 class="section-title">Personal Information</h2>
-            <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="John Doe"
-                required
-              />
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="john@example.com"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="+1 (555) 123-4567"
-                />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="location">Location</label>
-                <input
-                  type="text"
-                  id="location"
-                  name="location"
-                  placeholder="New York, NY"
-                />
-              </div>
-              <div class="form-group">
-                <label for="jobTitle">Professional Title</label>
-                <input
-                  type="text"
-                  id="jobTitle"
-                  name="jobTitle"
-                  placeholder="Product Manager"
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="summary">Professional Summary</label>
-              <textarea
-                id="summary"
-                name="summary"
-                placeholder="Brief overview of your professional background and goals..."
-                rows="4"
-              ></textarea>
-            </div>
-          </section>
+        <div class="name-container">
+          <h1>Lorna<br />Alvarado</h1>
+          <span class="title">Marketing Manager</span>
+        </div>
 
-          <!-- Experience Section -->
-          <section class="form-section">
-            <div class="section-header">
-              <h2 class="section-title">Experience</h2>
-              <button type="button" class="btn-add" id="addExperience">
-                + Add Experience
-              </button>
-            </div>
-            <div id="experienceList" class="dynamic-list"></div>
-          </section>
-
-          <!-- Education Section -->
-          <section class="form-section">
-            <div class="section-header">
-              <h2 class="section-title">Education</h2>
-              <button type="button" class="btn-add" id="addEducation">
-                + Add Education
-              </button>
-            </div>
-            <div id="educationList" class="dynamic-list"></div>
-          </section>
-
-          <!-- Skills Section -->
-          <section class="form-section">
-            <div class="section-header">
-              <h2 class="section-title">Skills</h2>
-              <button type="button" class="btn-add" id="addSkill">
-                + Add Skill
-              </button>
-            </div>
-            <div id="skillsList" class="dynamic-list"></div>
-          </section>
-
-          <!-- Action Buttons -->
-          <div class="form-actions">
-            <button type="reset" class="btn btn-secondary">Clear All</button>
-            <button type="button" class="btn btn-primary" id="downloadBtn">
-              Download PDF
-            </button>
+        <div class="side-section">
+          <h3>Contact</h3>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+1 (555) 456-7890</span>
           </div>
-        </form>
+          <div class="contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>l.alvarado@email.com</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>123 Business Ave, San Francisco, CA</span>
+          </div>
+          <div class="contact-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>linkedin.com/in/lornaalvarado</span>
+          </div>
+        </div>
+
+        <div class="side-section">
+          <h3>About Me</h3>
+          <p class="about-text">
+            Dynamic Marketing Professional with over 8 years of experience in
+            driving brand growth and digital transformation. Expert in
+            cross-functional leadership, data-driven strategy, and creative
+            campaign execution. Proven track record of increasing market share
+            and optimizing ROI across diverse industries.
+          </p>
+        </div>
+
+        <div class="side-section">
+          <h3>Expertise</h3>
+          <ul class="skills-list">
+            <li>Brand Strategy & Positioning</li>
+            <li>Digital Content Marketing</li>
+            <li>Team Leadership (10+ members)</li>
+            <li>SEO & Performance Analytics</li>
+            <li>Strategic Partnership Growth</li>
+            <li>Budget Management & ROI</li>
+          </ul>
+        </div>
       </div>
 
-      <!-- Right Panel: Preview -->
-      <div class="preview-panel">
-        <div class="preview-content">
-          <div class="resume-preview" id="resumePreview">
-            <div class="resume-header">
-              <div class="resume-name" id="previewName">Your Name</div>
-              <div class="resume-title" id="previewTitle">
-                Professional Title
+      <!-- RIGHT CONTENT -->
+      <div class="right">
+        <!-- EDUCATION -->
+        <div class="section">
+          <div class="section-title">Education</div>
+          <div class="timeline">
+            <div class="entry">
+              <div class="entry-header">
+                <h4>Master of Business Administration (MBA)</h4>
+                <span class="date">2016 – 2018</span>
               </div>
-              <div class="resume-contact" id="previewContact">
-                <span class="contact-item" id="previewEmail"
-                  >email@example.com</span
-                >
-                <span class="contact-item" id="previewPhone"
-                  >+1 (555) 123-4567</span
-                >
-                <span class="contact-item" id="previewLocation">Location</span>
-              </div>
+              <span class="company">Stanford Graduate School of Business</span>
+              <p>
+                Specialization in Marketing & Strategic Management. Recipient of
+                the Academic Excellence Award.
+              </p>
             </div>
+            <div class="entry">
+              <div class="entry-header">
+                <h4>B.S. in Business Management</h4>
+                <span class="date">2012 – 2016</span>
+              </div>
+              <span class="company">University of California, Berkeley</span>
+              <p>
+                Graduated Magna Cum Laude. President of the Marketing Collegiate
+                Chapter.
+              </p>
+            </div>
+          </div>
+        </div>
 
-            <div class="resume-summary" id="previewSummary"></div>
+        <!-- EXPERIENCE -->
+        <div class="section">
+          <div class="section-title">Professional Experience</div>
+          <div class="timeline">
+            <div class="entry">
+              <div class="entry-header">
+                <h4>Senior Marketing Manager</h4>
+                <span class="date">2020 – Present</span>
+              </div>
+              <span class="company">Global Tech Solutions Inc.</span>
+              <ul>
+                <li>
+                  Spearheaded a multi-channel rebrand resulting in a 45%
+                  increase in organic web traffic within the first year.
+                </li>
+                <li>
+                  Manage an annual marketing budget of $1.2M, consistently
+                  achieving 20% year-over-year growth in lead generation.
+                </li>
+                <li>
+                  Direct a team of 12 creative and technical specialists to
+                  deliver high-impact digital campaigns.
+                </li>
+              </ul>
+            </div>
+            <div class="entry">
+              <div class="entry-header">
+                <h4>Marketing Strategy Specialist</h4>
+                <span class="date">2018 – 2020</span>
+              </div>
+              <span class="company">Innovate Media Group</span>
+              <ul>
+                <li>
+                  Developed data-driven customer personas that improved email
+                  campaign click-through rates by 28%.
+                </li>
+                <li>
+                  Coordinated large-scale product launches across North America
+                  and European markets.
+                </li>
+                <li>
+                  Implemented a new CRM workflow that reduced lead response time
+                  by 40%.
+                </li>
+              </ul>
+            </div>
+            <div class="entry">
+              <div class="entry-header">
+                <h4>Digital Marketing Associate</h4>
+                <span class="date">2016 – 2018</span>
+              </div>
+              <span class="company">BrightSpark Agency</span>
+              <ul>
+                <li>
+                  Managed social media accounts for 15+ B2B clients, increasing
+                  average engagement by 60%.
+                </li>
+                <li>
+                  Authored monthly performance reports using Google Analytics
+                  and Tableau to guide client strategy.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-            <div id="previewExperience" class="resume-section"></div>
-            <div id="previewEducation" class="resume-section"></div>
-            <div id="previewSkills" class="resume-section"></div>
+        <!-- REFERENCES -->
+        <div class="section">
+          <div class="section-title">References</div>
+          <div class="refs">
+            <div class="ref-card">
+              <strong>Marcus Sterling</strong>
+              VP of Marketing / Global Tech Solutions<br />
+              P: +1 (555) 123-4567<br />
+              E: m.sterling@globaltech.com
+            </div>
+            <div class="ref-card">
+              <strong>Sarah Jenkins</strong>
+              Executive Director / Innovate Media<br />
+              P: +1 (555) 987-6543<br />
+              E: s.jenkins@innovatemedia.com
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <script src="./../js/templateLoader.js"></script>
   </body>
 </html>
