@@ -381,7 +381,7 @@ function loadResumePreview() {
     const nameTitle = document.createElement("div");
     nameTitle.className = "name-title";
     nameTitle.innerHTML = `
-    <h2 class="full-name">Lorna Alvarado</h2>
+    <h2 class="full-name">Alehegne Geta</h2>
     <p class="job-title">Marketing Manager</p>
   `;
     leftContainer.appendChild(nameTitle);
