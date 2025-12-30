@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="../css/auth.css">
+</head>
+<body>
+
+<!-- Navbar (same style as landing page) -->
+<nav class="navbar">
+  <h1 class="logo">Resume Builder</h1>
+  <ul class="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="signin.html">Sign In</a></li>
+  </ul>
+</nav>
+
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <h2>Create Account</h2>
+
+    <form id="signupForm">
+      <input type="email" id="signupEmail" placeholder="Email" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+
+    <p id="signupMessage" class="auth-message"></p>
+    <p>Already have an account? <a href="signin.html">Sign In</a></p>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2025 Resume Builder | Internet Programming Project</p>
+  </footer>
+
+<script src="../js/auth.js"></script>
+</body>
+</html>
+
