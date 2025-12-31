@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/editor.css" />
+    <link id="template-style" rel="stylesheet"/>
   </head>
   <body>
     <div class="editor-panel">
@@ -171,7 +171,9 @@
           <div class="section-header">
             <span>Skills</span>
           </div>
-          <div id="skills_inputs"></div>
+          <div id="skills_inputs">
+            <!--Skills-->
+          </div>
           <button class="btn" onclick="addSkill()">
             <span class="icon">+</span> Add Skill</button>
 
@@ -226,12 +228,16 @@
 
           <div>
             <div class="section-title">Education</div>
-            <div class="education" id="education_section"></div>
+            <div class="education" id="education_section">
+              <!--Education -->
+            </div>
           </div>
 
           <div>
             <div class="section-title">Skills</div>
-            <div id="skills_section"></div>
+            <div id="skills_section">
+
+            </div>
           </div>
         </div>
 
@@ -243,12 +249,14 @@
       </div>
     </div>
 
-    <!-- <script type="module">
-      import { initialize } from '/js/livePreview.js';
-      initialize();
-    </script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const template = params.get("template") || "editor1";
 
-    <script type="module" src="./js"></script> -->
+      const link = document.getElementById("template-style");
+      link.href = `css/${template}.css`;
+
+    </script>
     <script src="/js/livePreview.js"></script>
   </body>
 </html>
