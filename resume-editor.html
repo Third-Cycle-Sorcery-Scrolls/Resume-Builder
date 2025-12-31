@@ -10,6 +10,14 @@
       rel="stylesheet"
     />
     <link id="template-style" rel="stylesheet"/>
+    <style>
+      input:valid{
+        border: 1px solid green;
+      }
+      input:invalid {
+        border: 1px solid red;
+      }
+    </style>
   </head>
   <body>
     <div class="editor-panel">
@@ -31,8 +39,10 @@
               required
               minlength="3"
               maxlength="100"
-              oninput="updateText('user_name', this.value)"
+              placeholder="Enter your name..."
+              oninput="updateText('user_name', (this.value).trim())"
             />
+            <div class="error-message" id="nameError"></div>
           </div>
 
           <div class="form-group">
@@ -92,8 +102,8 @@
               type="tel"
               id="contact_phone_input"
               name="phone"
-              value="+251 911 22 33 44"
-              placeholder="+251 91 23 45 67"
+              value="+251911223344"
+              placeholder="+25191234567"
               pattern="^\+?[\d\s]{10,}$"
               required
               oninput="updateText('contact_phone', this.value)"
@@ -177,7 +187,7 @@
             <span class="icon">+</span> Add Skill</button>
 
           <br /><br />
-          <button type="submit">Submit</button>
+          <button type="submit" id="submitBtn">Submit</button>
           <button
             disabled
             type="button"
@@ -226,14 +236,18 @@
           </div>
 
           <div>
-            <div class="section-title">Education</div>
+            <div class="section-title">
+              <span id="education_header">Education</span>
+            </div>
             <div class="education" id="education_section">
               <!--Education -->
             </div>
           </div>
 
           <div>
-            <div class="section-title">Skills</div>
+            <div class="section-title">
+              <span id="skills_header">Skills</span>
+            </div>
             <div id="skills_section">
 
             </div>
@@ -241,7 +255,9 @@
         </div>
 
         <div class="right">
-          <div class="section-title">Professional Experience</div>
+          <div class="section-title">
+            <span id="experience_header">Professional Experience</span>
+          </div>
 
           <div id="experience_section"></div>
         </div>
@@ -266,12 +282,48 @@
         name.addEventListener('input', validateForm);
         phone.addEventListener('input', validateForm);
 
+        name.addEventListener('blur', () => validateField("name"));
+        phone.addEventListener('blur', function(){
+          validateField("phone");
+        });
+
         validateForm();
       });
+
+      function validateField(field) {
+        const name = document.getElementById('input_name');
+        const phone = document.getElementById('contact_phone_input');
+
+        const nameError = document.getElementById('nameError');
+        const phoneError = document.getElementById('phoneError');
+
+        if(field === 'name') {
+          if(name.value.trim().length < 3) {
+            nameError.textContent = "Name must be at least 3 characters.";
+            nameError.style.color = "red";
+            nameError.style.fontSize = "small";
+          } else {
+            nameError.textContent = "";
+          }
+        }
+
+        if(field === 'phone') {
+          const phonePattern = /^(\+\d{11,}|\d{10})$/;
+          if(!phonePattern.test(phone.value.trim())) {
+            phoneError.textContent = "Enter a valid phone number (min 10 digits, may include + or spaces).";
+            phoneError.style.color = "red";
+            phoneError.style.fontSize = "small";
+          } else {
+            phoneError.textContent = "";
+          }
+        }
+      }
+
 
       function validateForm(){
         const name = document.getElementById('input_name');
         const phone = document.getElementById('contact_phone_input');
+        const submitBtn = document.getElementById('submitBtn');
         const printBtn = document.getElementById('printBtn');
 
         let isValid = true;
@@ -285,6 +337,7 @@
           isValid = false;
         }
 
+        //submitBtn.disabled = !isValid;
         printBtn.disabled = !isValid;
         
         return isValid;
