@@ -24,22 +24,71 @@ body {
 
 /* ===== Header ===== */
 .header {
-  text-align: center;
   margin-bottom: 30px;
+  border-bottom: 2px solid #e0f7fa;
+  padding-bottom: 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.name-title {
+  flex: 1;
 }
 
 .header h1 {
   font-size: 36px;
   font-weight: 700;
   color: #007a8c; 
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.contact-info span {
-  display: inline-block;
-  margin: 0 8px;
+.profession {
+  font-size: 18px;
+  font-weight: 500;
   color: #555;
+  background: #f0fbfc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+  border-left: 4px solid #00b1c9;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.contact-item i {
+  width: 18px;
+  color: #007a8c;
   font-size: 14px;
+}
+
+.contact-item span,
+.contact-item a {
+  font-size: 14px;
+  color: #555;
+  word-break: break-word;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #007a8c;
+  text-decoration: underline;
 }
 
 /* ===== Sections ===== */
