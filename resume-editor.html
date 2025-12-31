@@ -17,25 +17,28 @@
 
       <div class="section-header">Personal Info</div>
       <div class="form-group">
-        <label>Full Name</label>
+        <label for="input_name">Full Name</label>
         <input
           type="text"
           id="input_name"
           value="Amanuel Ayele"
+          required
           oninput="updateText('user_name', this.value)"
         />
       </div>
       <div class="form-group">
-        <label>Job Title</label>
+        <label for="input_title">Job Title</label>
         <input
           type="text"
           id="input_title"
+          required
+          placeholder = "Software Engineer"
           value="BACKEND DEVELOPER"
           oninput="updateText('user_title', this.value)"
         />
       </div>
       <div class="form-group">
-        <label>Photo</label>
+        <label for="input_photo">Photo</label>
         <input
           type="file"
           id="input_photo"
@@ -44,29 +47,29 @@
         />
       </div>
       <div class="form-group">
-        <label>Summary</label>
+        <label for="input_summary">Summary</label>
         <textarea
           id="input_summary"
           oninput="updateText('user_summary', this.value)"
-        >
-Short professional summary goes here.</textarea
-        >
+        >Short professional summary goes here.</textarea>
       </div>
 
       <div class="section-header">Contact</div>
       <div class="form-group">
         <label>Phone</label>
         <input
-          type="text"
+          type="tel"
           value="+251 911 22 33 44"
+          placeholder="+251 91 23 45 67"
           oninput="updateText('contact_phone', this.value)"
         />
       </div>
       <div class="form-group">
         <label>Email</label>
         <input
-          type="text"
+          type="email"
           value="amanuel@example.com"
+          required
           oninput="updateText('contact_email', this.value)"
         />
       </div>

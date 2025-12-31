@@ -1,75 +1,113 @@
+:root {
+    --primary: #4a6cff;
+    --text-dark: #111827;
+    --bg: #f9fafb;
+}
+
 body {
     font-family: "Zalando Sans Expanded", sans-serif;
     line-height: 1.5;
-    color: #222;
-    background-color: white;
-    padding: 20px;
+    color: var(--text-dark);
+    background-color: var(--bg);
+    padding: 30px;
     margin: 0 auto;
 }
 
 header {
     display: flex;
-    padding: 20px;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #47f;
+    align-items: flex-start;
+    padding: 30px 20px;
+    margin-bottom: 40px;
+    border-bottom: 3px solid var(--primary);
 }
 h1{
-    font-size: 2rem;
-    color: #111;
+    font-size: 2.6rem;
+    letter-spacing: 1px;
+    color: var(--text-dark);
     margin-bottom: 10px;
 }
 .name {
-    width: 70%;
+    flex: 1;
 }
 .info-section{
-    width: 25%;
+    min-width: 220px;
 }
 .info-item{
     margin-bottom: 5px;
     font-size: 0.9rem;
 }
 .info-item span{
-    color: #47f;
+    color: var(--primary);
+    font-weight: 600;
 }
 .description {
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 10px;
+    max-width: 90%;
 }
 .container {
     width: 100%;
     display: flex;
-    gap: 30px;
+    padding: 15px;
+    gap: 5rem;
 }
 aside {
-    width: 33%;
+    width: 32%;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: white;
+}
+.aside{
+    margin-bottom: 30px;
+}
+.aside:last-child{
+    margin-bottom: 0;
+}
+.aside h2{
+    font-size: 1.2rem;
+}
+aside, .job{
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
 main {
-    width: 67%;
+    width: 68%;
+    padding: 10px;
 }
 section{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 h2{
     font-size: 1.4rem;
-    color: #222;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-dark);
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
 }
 .job {
-    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border: 0.5px solid #eee;
+    border-left: 3px solid var(--primary);
+    border-radius: 10px;
 }
 .company{
-    font-weight: bold;
+    font-size: 1.05rem;
+    font-weight: 700;
 }
 .date{
+    align-self: flex-end;
     color: #555;
     font-size: 0.9rem;
 }
 .position{
-    color: #47f;
-    font-weight: 500;
+    color: var(--primary);
+    font-weight: 600;
 }
 .language{
     display: flex;
@@ -94,14 +132,16 @@ h2{
 }
 .contact-item{
     display: flex;
-    align-items: center;
+    text-align: left;
     font-size: 0.9rem;
+    gap: 8px;
+    margin-bottom: 6px;
 }
 .contact-icon {
     width: 24px;
     margin-right: 3px;
     text-align: center;
-    color: #47f;
+    color: var(--primary);
 }
 .education-item {
     margin-bottom: 15px;
@@ -116,8 +156,8 @@ h2{
 }
 .skills-set{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
 }
 .skill-category {
     margin-bottom: 10px;
@@ -127,11 +167,26 @@ h2{
     margin-bottom: 8px;
 }
 .skill-item {
-    margin-bottom: 5px;
-    font-size: 0.95rem;
+    display: inline-block;
+    background-color: var(--bg);
+    padding: 4px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
 }
 @media (max-width: 750px){
+    body{
+        padding: 1.5rem;
+    }
     header, .container {
         flex-direction: column;
+    }
+    .name, .info-section, aside, main {
+        width: 100%;
+    }
+    .info-section {
+        text-align: left;
+        margin-top: 10px;
     }
 }
