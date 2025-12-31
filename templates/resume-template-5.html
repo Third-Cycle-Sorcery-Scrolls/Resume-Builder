@@ -5,18 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume Template 5</title>
     <link rel="stylesheet" href="../css/style-template-5.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="resume-container">
         <!-- Header -->
         <header class="header">
-            <h1 data-field="fullName">Michael Chen</h1>
-
-            <div class="contact-info">
-                <span data-field="email">michael.chen@email.com</span>
-                <span data-field="phone">+1 (415) 555-7890</span>
-                <span data-field="linkedin">linkedin.com/in/michaelchen</span>
-                <span data-field="github">github.com/michaelchen-dev</span>
+            <div class="header-content">
+                <div class="name-title">
+                    <h1 data-field="fullName">Michael Chen</h1>
+                    <div class="profession" data-field="profession">Software Engineer</div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:michael.chen@email.com" data-field="email">michael.chen@email.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+14155557890" data-field="phone">+1 (415) 555-7890</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/michaelchen" target="_blank" data-field="linkedin">linkedin.com/in/michaelchen</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/michaelchen-dev" target="_blank" data-field="github">github.com/michaelchen-dev</a>
+                    </div>
+                </div>
             </div>
         </header>
         <!-- Education -->
