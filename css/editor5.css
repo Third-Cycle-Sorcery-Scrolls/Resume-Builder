@@ -1,0 +1,466 @@
+/* --- GLOBAL RESET & VARS --- */
+:root {
+  --primary: #2c3e50; /* Dark Midnight Blue */
+  --secondary: #34495e; /* Lighter Blue-Grey */
+  --accent: #e67e22; /* Burnt Orange for pop */
+  --text-main: #2c3e50;
+  --text-light: #ecf0f1;
+  --bg-editor: #f8f9fa;
+  --bg-preview: #e0e0e0;
+  --sidebar-width: 420px;
+}
+/* --- GLOBAL & LAYOUT STYLES --- */
+/* :root {
+  --accent: #1f6b73;
+  --muted: #6b7380;
+  --line: #e6eef0;
+  --bg: #f2f7f8;
+  --sidebar-width: 400px;
+} */
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  overflow: hidden; /*Prevent the body element from scroll only the childs like .panels can*/
+}
+
+/* --- LEFT PANEL: EDITOR --- */
+.editor-panel {
+  width: var(--sidebar-width);
+  background: white;
+  border-right: 1px solid #ddd;
+  height: 100%;
+  overflow-y: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.editor-panel h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.section-header {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent);
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.dynamic-list-item {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-remove {
+  background: #e74c3c;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+/* --- RIGHT PANEL: PREVIEW AREA --- */
+.preview-panel {
+  flex: 1;
+  background: #555; /* Dark background to make paper pop */
+  padding: 40px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- THE RESUME PAPER (A4 Dimension Logic) --- */
+.resume-container {
+  width: 210mm;
+  min-height: 297mm;
+  background: white;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  display: grid;
+  /* THE MAGIC: Grid layout transforms the structure */
+  grid-template-columns: 32% 68%;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+}
+
+/* --- 1. THE SIDEBAR (.left in HTML) --- */
+/* We force the .left container to span the full height on the left */
+.resume-container .left {
+  grid-area: sidebar;
+  background-color: var(--primary);
+  color: var(--text-light);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left;
+  /* Specific styling for sidebar content */
+}
+
+/* Avatar - Circular and centered */
+.resume-container .avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.resume-container .avatar img#user_photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Section Titles */
+.resume-container .left .section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+/* Contact Info (in Sidebar) */
+.resume-container .contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+.resume-container .contact div {
+  word-break: break-word;
+}
+
+/* Summary (in Sidebar) */
+.resume-container .summary {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  font-style: italic;
+}
+
+/* Skills (in Sidebar) */
+.resume-container .skill-item {
+  margin-bottom: 12px;
+}
+.resume-container .skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.resume-container .skill-bar {
+  background: rgba(255, 255, 255, 0.2);
+  height: 6px;
+  border-radius: 2px;
+}
+.resume-container .skill-fill {
+  background: var(--accent); /* Orange bar on dark bg */
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* Education (in Sidebar) */
+.resume-container .education p {
+  margin: 0;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- 2. THE HEADER (.header in HTML) --- */
+.resume-container .header {
+  grid-area: header;
+  padding: 50px 40px 10px 40px; /* Top padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: none;
+}
+
+.resume-container .header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  color: var(--primary);
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.resume-container .header p {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* --- 3. THE MAIN CONTENT (.right in HTML) --- */
+.resume-container .right {
+  grid-area: main;
+  padding: 30px 40px;
+  background: white;
+}
+
+.resume-container .right .section-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #95a5a6;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+/* Add a visual line after main titles */
+.resume-container .right .section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+  margin-left: 15px;
+}
+
+/* Experience Jobs */
+.resume-container .job {
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid #eee;
+}
+
+/* Timeline dot */
+.resume-container .job::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.resume-container .job > div[style*="display:flex"] {
+  display: flex !important;
+  flex-direction: column; /* Stack Title and Date for cleaner look */
+  margin-bottom: 5px;
+}
+
+.resume-container .job-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 0;
+}
+
+.resume-container .job-date {
+  font-size: 12px;
+  color: #7f8c8d;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.resume-container .job-company {
+  font-size: 14px;
+  font-weight: 600;
+  color: #34495e;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.resume-container .job ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.resume-container .job ul li {
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* --- RESPONSIVE / MOBILE VIEW --- */
+@media (max-width: 850px) {
+  body {
+    flex-direction: column;
+    overflow: auto;
+  }
+  .editor-panel {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .preview-panel {
+    padding: 20px;
+  }
+  .resume-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+  .resume-container .left {
+    order: 2;
+  }
+  .resume-container .header {
+    order: 1;
+    text-align: center;
+    padding: 30px 20px;
+  }
+  .resume-container .right {
+    order: 3;
+    padding: 20px;
+  }
+}
+
+/* --- PRINT SETTINGS --- */
+/* @media print {
+  @page {
+    margin: 0;
+  }
+  body {
+    background: white;
+    display: block;
+    height: auto;
+  }
+  .editor-panel {
+    display: none;
+  }
+  .preview-panel {
+    padding: 0;
+    display: block;
+    background: white;
+  }
+
+  .resume-container {
+    width: 100%;
+    min-height: 100vh;
+    box-shadow: none;
+    margin: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+
+  
+  
+}
+ */
+
+/* / */
+
+/* --- Print friendly (PDF) --- */
+@media print {
+  /* hide editor controls if present on same page */
+  body .editor-panel {
+    display: none !important;
+  }
+  .resume-container .left {
+    background-color: #2c3e50 !important;
+    color: white !important;
+  }
+
+  .preview-panel {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+
+  .resume-container .skill-fill {
+    background-color: #e67e22 !important;
+  }
+
+  .preview-panel .resume-container {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 18mm !important; /* printer margin */
+  }
+
+  /* make fonts consistent and high-contrast for printing */
+  .preview-panel .resume-container .summary,
+  .preview-panel .resume-container .contact,
+  .preview-panel .resume-container .job,
+  .preview-panel .resume-container .education {
+    color: #000 !important;
+  }
+
+  /* ensure skill bars print as filled blocks */
+  .preview-panel .skill-fill {
+    background: #111 !important;
+  }
+}

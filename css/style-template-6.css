@@ -12,6 +12,15 @@ body {
     padding: 30px;
     margin: 0 auto;
 }
+.resume{
+    width: 210mm;
+    height: 297mm;
+    margin: 40px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
 
 header {
     display: flex;
@@ -54,6 +63,7 @@ h1{
 }
 aside {
     width: 32%;
+    height: 1rem;
     padding: 15px;
     border-radius: 12px;
     background-color: white;
@@ -73,6 +83,7 @@ aside, .job{
 main {
     width: 68%;
     padding: 10px;
+    height: 1rem;
 }
 section{
     margin-bottom: 25px;

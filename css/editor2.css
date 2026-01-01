@@ -1,0 +1,427 @@
+/* --- GLOBAL & LAYOUT STYLES --- */
+:root {
+  --accent: #1f6b73;
+  --muted: #6b7380;
+  --line: #e6eef0;
+  --bg: #f2f7f8;
+  --sidebar-width: 400px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  overflow: hidden; /*Prevent the body element from scroll only the childs like .panels can*/
+}
+
+/* --- LEFT PANEL: EDITOR --- */
+.editor-panel {
+  width: var(--sidebar-width);
+  background: white;
+  border-right: 1px solid #ddd;
+  height: 100%;
+  overflow-y: auto;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
+  z-index: 10;
+}
+
+.editor-panel h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.section-header {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--accent);
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.dynamic-list-item {
+  background: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-remove {
+  background: #e74c3c;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 8px;
+  font-size: 11px;
+}
+
+/* --- RIGHT PANEL: PREVIEW AREA --- */
+/* -------------------------
+   Preview-only full template
+   Replace/append in ./css/editor.css
+   Targets only .preview-panel / .resume-container
+   ------------------------- */
+
+/* Base preview canvas */
+.preview-panel {
+  background: #f4f7fa;
+  padding: 36px 24px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Resume card */
+.preview-panel .resume-container {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(18, 25, 35, 0.08);
+  padding: 28px;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: #111827;
+  display: block; /* keep simple flow */
+}
+
+/* --- Header: large, modern, left-aligned --- */
+.preview-panel .resume-container .header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  border-bottom: 1px solid rgba(16, 24, 40, 0.06);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.preview-panel .resume-container .header h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  margin: 0;
+}
+
+.preview-panel .resume-container .header p {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* --- Info band: compact cards, horizontal on wide screens --- */
+.preview-panel .resume-container .left {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+
+/* Treat each inner section inside .left as a 'card' except avatar container specifics */
+.preview-panel .resume-container .left > div {
+  background: #fbfdff;
+  border: 1px solid rgba(16, 24, 40, 0.04);
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+  flex: 1 1 220px;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.03);
+}
+
+/* Make avatar a compact, tall card */
+.preview-panel .resume-container .avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  min-width: 140px;
+  max-width: 160px;
+  flex: 0 0 140px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(16, 24, 40, 0.04);
+}
+
+/* avatar image styling */
+.preview-panel .resume-container .avatar img#user_photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  border: 3px solid #fff;
+}
+
+/* Section titles inside cards */
+.preview-panel .resume-container .section-title {
+  font-weight: 600;
+  font-size: 13px;
+  color: #111827;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+/* Contact list styling */
+.preview-panel .resume-container .contact {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+/* Summary block: allow paragraphs, reduced opacity for filler */
+.preview-panel .resume-container .summary {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+  max-height: 160px;
+  overflow: hidden;
+}
+
+/* Education & Skills compact lists */
+.preview-panel .resume-container .education p {
+  margin: 0;
+  font-size: 13px;
+  color: #374151;
+}
+
+.preview-panel #skills_section .skill-item {
+  margin-bottom: 8px;
+}
+
+.preview-panel .skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.preview-panel .skill-bar {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(16, 24, 40, 0.06),
+    rgba(16, 24, 40, 0.03)
+  );
+  height: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.preview-panel .skill-fill {
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #111827, rgba(17, 24, 39, 0.7));
+  box-shadow: inset 0 -2px 6px rgba(255, 255, 255, 0.06);
+}
+
+/* --- Experience: timeline-like cards stacked full-width --- */
+.preview-panel .resume-container .right {
+  margin-top: 6px;
+}
+
+/* Make each job a card with soft left stripe */
+.preview-panel .resume-container .job {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.03);
+  margin-bottom: 14px;
+  border-left: 4px solid rgba(17, 24, 39, 0.08);
+  position: relative;
+  overflow: visible;
+}
+
+/* job header row: title left, date right */
+.preview-panel .resume-container .job > div[style*="display:flex"] {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.preview-panel .resume-container .job-title {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.preview-panel .resume-container .job-date {
+  font-size: 12px;
+  color: #6b7280;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+
+/* company */
+.preview-panel .resume-container .job-company {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #374151;
+}
+
+/* bullet list style */
+.preview-panel .resume-container .job ul {
+  margin: 6px 0 0 18px;
+  padding: 0;
+  color: #374151;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* subtle divider before experience list when it appears */
+.preview-panel .resume-container .section-title + .job,
+.preview-panel .resume-container .section-title + #experience_section {
+  margin-top: 10px;
+}
+
+/* --- Responsiveness --- */
+@media (min-width: 860px) {
+  .preview-panel .resume-container {
+    padding: 36px;
+  }
+
+  /* put header elements more compact */
+  .preview-panel .resume-container .header h1 {
+    font-size: 34px;
+  }
+  .preview-panel .resume-container .header p {
+    font-size: 12px;
+  }
+
+  /* left area cards layout: avatar first then info column */
+  .preview-panel .resume-container .left {
+    align-items: flex-start;
+  }
+
+  /* make left cards smaller to allow more content in a row */
+  .preview-panel .resume-container .left > div {
+    flex: 1 1 260px;
+  }
+}
+
+/* Small screens: stack everything fluidly */
+@media (max-width: 640px) {
+  .preview-panel .resume-container {
+    padding: 18px;
+    border-radius: 6px;
+  }
+
+  .preview-panel .resume-container .avatar {
+    flex: 0 0 110px;
+    min-width: 110px;
+  }
+
+  .preview-panel .resume-container .left > div {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .preview-panel .resume-container .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .preview-panel .resume-container .header h1 {
+    font-size: 22px;
+  }
+}
+
+/* --- Print friendly (PDF) --- */
+@media print {
+  /* hide editor controls if present on same page */
+  body .editor-panel {
+    display: none !important;
+  }
+
+  .preview-panel {
+    background: #fff !important;
+    padding: 0 !important;
+  }
+
+  .preview-panel .resume-container {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 18mm !important; /* printer margin */
+  }
+
+  /* make fonts consistent and high-contrast for printing */
+  .preview-panel .resume-container .summary,
+  .preview-panel .resume-container .contact,
+  .preview-panel .resume-container .job,
+  .preview-panel .resume-container .education {
+    color: #000 !important;
+  }
+
+  /* ensure skill bars print as filled blocks */
+  .preview-panel .skill-fill {
+    background: #111 !important;
+  }
+}
