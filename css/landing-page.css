@@ -1,4 +1,8 @@
 /* ================= GLOBAL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -12,7 +16,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #203864;
-  padding: 15px 30px;
+  padding: 0 30px;
 }
 
 .logo {
@@ -37,22 +41,237 @@ body {
   text-decoration: underline;
 }
 
-/* ================= HERO ================= */
-.hero {
+/* ================= AUTHENTICATION UI ================= */
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* User Profile Section - Shown when authenticated */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Profile Info Container (Avatar + Name) */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.3s ease;
+}
+
+/* Profile Avatar/Icon */
+.profile-avatar {
+  font-size: 40px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect for profile avatar */
+.profile-avatar:hover {
+  transform: scale(1.1);
+  color: #e0f7fa;
+}
+
+/* Profile Name Display */
+.profile-name {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: center;
-  padding: 80px 20px;
+}
+
+/* Logout Button Styling */
+.logout-btn {
+  padding: 10px 20px;
+  background-color: rgba(52, 38, 128, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+/* Logout Button Hover Effect */
+.logout-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Active state for logout button */
+.logout-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced hover effects for auth buttons */
+.auth-buttons .btn {
+  transition: all 0.3s ease;
+}
+
+.auth-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.auth-buttons .btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design for Authentication UI */
+@media (max-width: 768px) {
+  .user-profile {
+    gap: 10px;
+  }
+
+  .profile-avatar {
+    font-size: 32px;
+  }
+
+  .profile-name {
+    font-size: 12px;
+    max-width: 80px;
+  }
+
+  .logout-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .auth-buttons {
+    gap: 8px;
+  }
+
+  .auth-buttons .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-profile {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .profile-info {
+    gap: 3px;
+  }
+
+  .profile-avatar {
+    font-size: 28px;
+  }
+
+  .profile-name {
+    font-size: 11px;
+    max-width: 70px;
+  }
+
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .auth-buttons .btn {
+    padding: 8px 16px;
+    font-size: 12px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ================= HERO ================= */
+/* Hero section: Normal layout with content and video as regular elements */
+.hero {
+  position: relative;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  text-align: center;
+  padding: 60px 20px;
   background-color: white;
 }
 
+/* Hero content container */
+.hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 5px;
+  width: 100%;
+}
+
 .hero h2 {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 15px;
+  color: #1f3255;
 }
 
 .hero p {
   font-size: 18px;
   max-width: 700px;
-  margin: 0 auto 30px;
+  margin: auto;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Video container: Normal element below buttons, centered horizontally */
+/* Video placement changes: Removed absolute positioning, z-index, and background behavior */
+.hero-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+/* Video element styling: Fixed max-width, rounded corners, subtle shadow */
+.hero-video {
+  max-width: 1000px;
+  width: 100%;
+  aspect-ratio: 20 / 10;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle hover effect on video */
+.hero-video:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
 }
 
 /* ================= BUTTON ================= */
@@ -62,52 +281,364 @@ body {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
+  transition: all 0.3s ease;
 }
 
 .primary {
-  background-color: #203864;
+  background-color: #082151;
   color: white;
 }
 
+/* Subtle hover effect with smooth transition */
 .primary:hover {
   background-color: #16294d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(23, 119, 132, 0.3);
+}
+
+.secondary {
+  background-color: white;
+  color: #16294d;
+  border: 2px solid #16294d;
+}
+
+/* Subtle hover effect with smooth transition */
+.secondary:hover {
+  background-color: #f0f4f8;
+  border-color: #16294d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(32, 95, 100, 0.2);
 }
 
 /* ================= FEATURES ================= */
+/* Features section: Soft neutral background color matching website theme */
 .features {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f5f7fa;
+}
+
+.features h3 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: #16294d;
+  font-weight: bold;
+}
+
+/* Container for side-by-side feature blocks */
+.feature-blocks {
+  max-width: 1100px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Individual feature block - side by side layout */
+/* Feature box size adjustments: Reduced padding and margins for medium-sized cards */
+.feature-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  /* background-color: white;  */
+  border-radius: 10px;
+  aspect-ratio: 20/9;
+  padding: 40px;
+  /* box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08); */
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+/* Subtle hover effect for feature blocks */
+.feature-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Reverse layout for alternating blocks */
+.feature-block-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Feature image styling: Proportionally scaled for medium-sized cards */
+.feature-image {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.feature-image img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Image zoom effect on hover */
+.feature-block:hover .feature-image img {
+  transform: scale(1.03);
+}
+
+/* Feature content styling: Reduced padding for better proportion */
+.feature-content {
+  flex: 1;
+  text-align: left;
+  padding: 10px 15px;
+}
+
+.feature-block-reverse .feature-content {
+  text-align: left;
+}
+
+.feature-content h4 {
+  font-size: 22px;
+  margin: 12px 0 8px 0;
+  color: #16294d;
+  transition: color 0.3s ease;
+}
+
+.feature-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+}
+
+.feature-icon {
+  font-size: 40px;
+  color: #16294d;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Icon animation on hover */
+.feature-block:hover .feature-icon {
+  transform: scale(1.08) rotate(3deg);
+  color: #16294d;
+}
+
+/* Responsive design for feature blocks */
+@media (max-width: 768px) {
+  .feature-block,
+  .feature-block-reverse {
+    flex-direction: column;
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .feature-content,
+  .feature-block-reverse .feature-content {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .feature-image {
+    min-width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+
+  .feature-content h4 {
+    font-size: 20px;
+  }
+
+  .feature-content p {
+    font-size: 14px;
+  }
+}
+
+/* Responsive design for hero section */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-video {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .hero-buttons {
+    margin-bottom: 30px;
+  }
+}
+
+/* ================= TESTIMONIALS ================= */
+/* Testimonials section: Soft complementary background color (different from features) */
+.testimonials {
+  background-color: #f0f4f8;
   padding: 60px 20px;
   text-align: center;
 }
 
-.features h3 {
-  font-size: 28px;
-  margin-bottom: 40px;
+.testimonials h3 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: #16294d;
+  font-weight: bold;
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: auto;
+/* Container for horizontal scrolling testimonials */
+.testimonials-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
 }
 
-.feature-card {
+/* Scrolling wrapper for reviewer cards */
+.testimonials-scroll {
+  display: flex;
+  gap: 30px;
+  animation: scrollTestimonials 30s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animation on hover */
+.testimonials-container:hover .testimonials-scroll {
+  animation-play-state: paused;
+}
+
+/* Horizontal scroll animation */
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Individual reviewer card */
+.reviewer-card {
+  min-width: 350px;
+  max-width: 350px;
   background-color: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+  flex-shrink: 0;
 }
 
-.feature-card h4 {
-  margin-bottom: 10px;
-  color: #203864;
+/* Hover effect for reviewer cards */
+.reviewer-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Reviewer avatar */
+.reviewer-avatar {
+  font-size: 60px;
+  color: #16294d;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.reviewer-card:hover .reviewer-avatar {
+  transform: scale(1.1);
+}
+
+/* Star rating */
+.reviewer-stars {
+  color: #ffc107;
+  font-size: 18px;
+  margin-bottom: 20px;
+  letter-spacing: 3px;
+}
+
+/* Reviewer text/quote */
+.reviewer-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 20px;
+  min-height: 80px;
+}
+
+/* Reviewer name */
+.reviewer-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #16294d;
+  margin: 10px 0 5px 0;
+}
+
+/* Reviewer title/position */
+.reviewer-title {
+  font-size: 14px;
+  color: #888;
+  font-style: italic;
+}
+
+/* Responsive design for testimonials */
+@media (max-width: 768px) {
+  .reviewer-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  .testimonials-scroll {
+    gap: 20px;
+  }
 }
 
 /* ================= FOOTER ================= */
 .footer {
-  background-color: #203864;
+  background-color: #16294d;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 20px;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+}
+
+.social-icons a:hover {
+  color: #ddd;
+}
+
+/* ================= ANIMATIONS ================= */
+.fade-in {
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Additional smooth transitions for better UX */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
