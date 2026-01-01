@@ -1,5 +1,5 @@
 :root{
-      --brand-primary:#203864;;
+      --brand-primary:#0d1b2a;
        }
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -109,6 +109,9 @@ main {
     font-size: 0.9rem;
     color: #6b7280;
 }
+.template-grid a{
+    text-decoration: none;
+}
 
 .select-template-btn {
     margin-top: 0.75rem;
@@ -131,7 +134,7 @@ main {
 }
 
 .select-template-btn:hover {
-    background: #14555d;
+    background: #0d1b2a;
     transform: translateY(-1px);
     box-shadow: 0 8px 18px rgba(25, 105, 115, 0.35);
 }

@@ -13,180 +13,189 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link id="template-style" rel="stylesheet" href="css/editor1.css" />
-    <style>
-      input:valid {
-        border: 1px solid green;
-      }
-      input:invalid {
-        border: 1px solid red;
-      }
-    </style>
+    <link id="template-style" rel="stylesheet"/>
   </head>
   <body>
     <div class="editor-panel">
+      <a href="choose-template.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Templates
+      </a>
       <h2>Edit Resume</h2>
 
-      <form id="resumeForm">
-        <div class="section-header"><span>Personal Info</span></div>
-
-        <div class="form-group">
-          <label for="input_name">Full Name *</label>
-          <input
-            type="text"
-            id="input_name"
-            name="name"
-            value="Amanuel Ayele"
-            required
-            minlength="3"
-            maxlength="100"
-            oninput="updateText('user_name', this.value)"
-          />
-          <div class="error-message" id="nameError"></div>
-        </div>
-
-        <div class="form-group">
-          <label for="input_title">Job Title *</label>
-          <input
-            type="text"
-            id="input_title"
-            name="title"
-            required
-            placeholder="Software Engineer"
-            value="BACKEND DEVELOPER"
-            minlength="2"
-            maxlength="100"
-            oninput="updateText('user_title', this.value)"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="input_photo">Profile Photo</label>
-          <div class="file-upload">
-            <input
-              type="file"
-              id="input_photo"
-              name="photo"
-              accept="image/*"
-              onchange="updatePhoto(this)"
-            />
-            <div class="file-info" id="fileInfo">No file chosen</div>
+        <form id="resumeForm" >
+          <!--Personal Info Sec-->
+          <div class="section-header">
+            <span>Personal Info</span>
           </div>
-          <div class="error-message" id="photoError"></div>
-        </div>
 
-        <div class="form-group">
-          <label for="input_summary">Professional Summary</label>
-          <textarea
-            id="input_summary"
-            name="summary"
-            required
-            minlength="30"
-            maxlength="300"
-            rows="4"
-            placeholder="Describe your professional background, skills, and career objectives..."
-            oninput="updateText('user_summary', this.value)"
+          <div class="form-group">
+            <label for="input_name">Full Name *</label>
+            <input
+              type="text"
+              id="input_name"
+              name="name"
+              value="Amanuel Ayele"
+              required
+              minlength="3"
+              maxlength="100"
+              oninput="updateText('user_name', this.value)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="input_title">Job Title *</label>
+            <input
+              type="text"
+              id="input_title"
+              name="title"
+              required
+              placeholder = "Software Engineer"
+              value="BACKEND DEVELOPER"
+              minlength="2"
+              maxlength="100"
+              oninput="updateText('user_title', this.value)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="input_photo">Profile Photo</label>
+            <div class="file-upload">
+              <input
+                type="file"
+                id="input_photo"
+                name="photo"
+                accept="image/*"
+                onchange="updatePhoto(this)"
+              />
+              <div class="file-info" id="fileInfo">No file chosen</div>
+              </div>
+              <div class="error-message" id="photoError"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="input_summary">Professional Summary</label>
+            <textarea
+              id="input_summary"
+              name="summary"
+              required
+              minlength="30"
+              maxlength="300"
+              rows="4"
+              placeholder="Describe your professional background, skills, and carrer objectives..."
+              oninput="updateText('user_summary', this.value)"
+            >Experienced Backend Developer with 5+ years specializing in scalable web applications. Proficient in Node.js, Python, and cloud technologies. Passionate about clean architecture and system optimization.</textarea>
+            <div class="char-count">
+            </div>
+            <div class="error-message" id="summaryError"></div>
+          </div>
+
+          <div class="section-header">
+            <span>Contact Information</span>
+          </div>
+
+          <div class="form-group">
+            <label>Phone *</label>
+            <input
+              type="tel"
+              id="contact_phone_input"
+              name="phone"
+              value="+251 911 22 33 44"
+              placeholder="+251 91 23 45 67"
+              pattern="^\+?[\d\s]{10,}$"
+              required
+              oninput="updateText('contact_phone', this.value)"
+            />
+            <div class="error-message" id="phoneError"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Email *</label>
+            <input
+              type="email"
+              id="contact_email_input"
+              name="email"
+              value="amanuel@example.com"
+              required
+              oninput="updateText('contact_email', this.value)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Address</label>
+            <input
+              type="text"
+              id="contact_address_input"
+              name="address"
+              value="Addis Ababa, Ethiopia"
+              oninput="updateText('contact_address', this.value)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Website/Portfolio</label>
+            <input
+              type="url"
+              id="contact_website_input"
+              name="website"
+              value="https://www.amanuel.com"
+              placeholder="https://yourportfolio.com"
+              oninput="updateText('contact_website', this.value)"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>LinkedIn Profile</label>
+            <input
+              type="url"
+              id="contact_linkedin_input"
+              name="linkedin"
+              value="https://linkedin.com/in/amanuel_li"
+              placeholder="https://(www\.)?lindedin\.com/.*"
+              oninput="updateText('contact_linkedin', this.value)"
+            />
+          </div>
+
+          <div class="section-header">
+            <span>Experience</span>
+          </div>
+          <div id="experience_inputs">
+            <!--Experience entries will be added here -->
+          </div>
+          <button type="button" class="btn" onclick="addExperience()">
+            <span class="icon">+</span> Add Job
+          </button>
+
+          <div class="section-header">
+            <span>Education</span>
+          </div>
+          <div id="education_inputs">
+            <!--Education entries-->
+          </div>
+          <button type="button" class="btn" onclick="addEducation()">
+            <span class="icon">+</span> Add Education</button>
+
+          <div class="section-header">
+            <span>Skills</span>
+          </div>
+          <div id="skills_inputs">
+            <!--Skills-->
+          </div>
+          <button type="button" class="btn" onclick="addSkill()">
+            <span class="icon">+</span> Add Skill</button>
+
+          <br /><br />
+          <button type="submit">Submit</button>
+          <button
+            disabled
+            type="button"
+            class="btn"
+            id="printBtn"
+            style="width:100%; background-color:#333;"
+            onclick="window.print()"
           >
-Experienced Backend Developer with 5+ years specializing in scalable web applications. Proficient in Node.js, Python, and cloud technologies. Passionate about clean architecture and system optimization.</textarea
-          >
-          <div class="char-count"></div>
-          <div class="error-message" id="summaryError"></div>
-        </div>
-
-        <div class="section-header"><span>Contact Information</span></div>
-
-        <div class="form-group">
-          <label>Phone *</label>
-          <input
-            type="tel"
-            id="contact_phone_input"
-            name="phone"
-            value="+251911223344"
-            placeholder="+25191234567"
-            pattern="^\+?[\d\s]{10,}$"
-            required
-            oninput="updateText('contact_phone', this.value)"
-          />
-          <div class="error-message" id="phoneError"></div>
-        </div>
-
-        <div class="form-group">
-          <label>Email *</label>
-          <input
-            type="email"
-            id="contact_email_input"
-            name="email"
-            value="amanuel@example.com"
-            required
-            oninput="updateText('contact_email', this.value)"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input
-            type="text"
-            id="contact_address_input"
-            name="address"
-            value="Addis Ababa, Ethiopia"
-            oninput="updateText('contact_address', this.value)"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>Website/Portfolio</label>
-          <input
-            type="url"
-            id="contact_website_input"
-            name="website"
-            value="https://www.amanuel.com"
-            placeholder="https://yourportfolio.com"
-            oninput="updateText('contact_website', this.value)"
-          />
-        </div>
-
-        <div class="form-group">
-          <label>LinkedIn Profile</label>
-          <input
-            type="url"
-            id="contact_linkedin_input"
-            name="linkedin"
-            value="https://linkedin.com/in/amanuel_li"
-            placeholder="https://(www\.)?linkedin\.com/.*"
-            oninput="updateText('contact_linkedin', this.value)"
-          />
-        </div>
-
-        <div class="section-header"><span>Experience</span></div>
-        <div id="experience_inputs"></div>
-        <button type="button" class="btn" onclick="addExperience()">
-          <span class="icon">+</span> Add Job
-        </button>
-
-        <div class="section-header"><span>Education</span></div>
-        <div id="education_inputs"></div>
-        <button type="button" class="btn" onclick="addEducation()">
-          <span class="icon">+</span> Add Education
-        </button>
-
-        <div class="section-header"><span>Skills</span></div>
-        <div id="skills_inputs"></div>
-        <button type="button" class="btn" onclick="addSkill()">
-          <span class="icon">+</span> Add Skill
-        </button>
-
-        <br /><br />
-        <button type="submit" id="submitBtn">Submit</button>
-        <button
-          type="button"
-          class="btn"
-          id="printBtn"
-          style="width: 100%; background-color: #333"
-          onclick="window.print()"
-        >
-          <span class="icon">📄</span> Download / Print PDF
-        </button>
-      </form>
+            <span class="icon">📄</span> Download / Print PDF
+          </button>
+        </form>
     </div>
 
     <div class="preview-panel">
@@ -224,24 +233,23 @@ Experienced Backend Developer with 5+ years specializing in scalable web applica
           </div>
 
           <div>
-            <div class="section-title">
-              <span id="education_header">Education</span>
+            <div class="section-title">Education</div>
+            <div class="education" id="education_section">
+              <!--Education -->
             </div>
-            <div class="education" id="education_section"></div>
           </div>
 
           <div>
-            <div class="section-title">
-              <span id="skills_header">Skills</span>
+            <div class="section-title">Skills</div>
+            <div id="skills_section">
+
             </div>
-            <div id="skills_section"></div>
           </div>
         </div>
 
         <div class="right">
-          <div class="section-title">
-            <span id="experience_header">Professional Experience</span>
-          </div>
+          <div class="section-title">Professional Experience</div>
+
           <div id="experience_section"></div>
         </div>
       </div>
@@ -251,73 +259,44 @@ Experienced Backend Developer with 5+ years specializing in scalable web applica
       const params = new URLSearchParams(window.location.search);
       const template = params.get("template") || "editor1";
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const link = document.getElementById("template-style");
-        if (link) link.href = `css/${template}.css`;
+      const link = document.getElementById("template-style");
+      link.href = `css/${template}.css`;
 
-        const name = document.getElementById("input_name");
-        const phone = document.getElementById("contact_phone_input");
-        const printBtn = document.getElementById("printBtn");
+      document.addEventListener('DOMContentLoaded', function() {
+        const name = document.getElementById('input_name');
+        const phone = document.getElementById('contact_phone_input');
 
-        if (!name || !phone || !printBtn) return;
+        if(!name || !phone){
+          return;
+        }
 
-        name.addEventListener("input", () => {
-          validateField("name");
-          validateForm();
-        });
-        phone.addEventListener("input", () => {
-          validateField("phone");
-          validateForm();
-        });
-        name.addEventListener("blur", () => validateField("name"));
-        phone.addEventListener("blur", () => validateField("phone"));
+        name.addEventListener('input', validateForm);
+        phone.addEventListener('input', validateForm);
+
         validateForm();
       });
 
-      function validateField(field) {
-        const name = document.getElementById("input_name");
-        const phone = document.getElementById("contact_phone_input");
-        const nameError = document.getElementById("nameError");
-        const phoneError = document.getElementById("phoneError");
+      function validateForm(){
+        const name = document.getElementById('input_name');
+        const phone = document.getElementById('contact_phone_input');
+        const printBtn = document.getElementById('printBtn');
 
-        if (field === "name" && nameError) {
-          if (!name || name.value.trim().length < 3) {
-            nameError.textContent = "Name must be at least 3 characters.";
-            nameError.style.color = "red";
-            nameError.style.fontSize = "small";
-          } else {
-            nameError.textContent = "";
-          }
+        let isValid = true;
+
+        if(name.value.trim().length < 3){
+          isValid = false;
         }
-
-        if (field === "phone" && phoneError) {
-          const phonePattern = /^(\+\d{10,}|\d{10})$/;
-          if (!phone || !phonePattern.test(phone.value.trim())) {
-            phoneError.textContent =
-              "Enter a valid phone number (min 10 digits, may include +).";
-            phoneError.style.color = "red";
-            phoneError.style.fontSize = "small";
-          } else {
-            phoneError.textContent = "";
-          }
-        }
-      }
-
-      function validateForm() {
-        const name = document.getElementById("input_name");
-        const phone = document.getElementById("contact_phone_input");
-        const printBtn = document.getElementById("printBtn");
 
         const phonePattern = /^(\+\d{10,}|\d{10})$/;
-        const valid = !!(
-          name &&
-          phone &&
-          name.value.trim().length >= 3 &&
-          phonePattern.test(phone.value.trim())
-        );
-        if (printBtn) printBtn.disabled = !valid;
-        return valid;
+        if(!phonePattern.test(phone.value.trim())){
+          isValid = false;
+        }
+
+        printBtn.disabled = !isValid;
+        
+        return isValid;
       }
+
     </script>
     <script src="/js/livePreview.js"></script>
   </body>

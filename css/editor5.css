@@ -1,6 +1,6 @@
 /* --- GLOBAL RESET & VARS --- */
 :root {
-  --primary: #2c3e50; /* Dark Midnight Blue */
+  --primary: #0d1b2a; /* Dark Midnight Blue */
   --secondary: #34495e; /* Lighter Blue-Grey */
   --accent: #e67e22; /* Burnt Orange for pop */
   --text-main: #2c3e50;
@@ -11,7 +11,7 @@
 }
 /* --- GLOBAL & LAYOUT STYLES --- */
 /* :root {
-  --accent: #1f6b73;
+  --accent: #0d1b2a;
   --muted: #6b7380;
   --line: #e6eef0;
   --bg: #f2f7f8;
@@ -39,6 +39,29 @@ body {
   box-sizing: border-box;
   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.05);
   z-index: 10;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(230, 126, 34, 0.1);
+  color: var(--accent);
+}
+
+.back-button i {
+  font-size: 12px;
 }
 
 .editor-panel h2 {
@@ -427,6 +450,9 @@ body {
 @media print {
   /* hide editor controls if present on same page */
   body .editor-panel {
+    display: none !important;
+  }
+  .back-button {
     display: none !important;
   }
   .resume-container .left {

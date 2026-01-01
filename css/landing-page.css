@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:#203864;
+  background-color:#0d1b2a;
   padding: 15px 30px;
 }
 
@@ -237,7 +237,7 @@ body {
 .hero h2 {
   font-size: 42px;
   margin-bottom: 15px;
-  color: #1f3255;
+  color: #0d1b2a;
 }
 
 .hero p {
@@ -264,11 +264,6 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-<<<<<<< HEAD
-
-=======
- 
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
   margin-top: 40px;
   padding: 0 20px;
 }
@@ -301,40 +296,27 @@ body {
 }
 
 .primary {
-  background-color: #082151;
+  background-color: #0d1b2a;
   color: white;
 }
 
 /* Subtle hover effect with smooth transition */
 .primary:hover {
-<<<<<<< HEAD
-  background-color: #16294d;
-=======
-  background-color: #16294d ;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  background-color: #1a2f4a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(23, 119, 132, 0.3);
 }
 
 .secondary {
   background-color: white;
-<<<<<<< HEAD
-  color: #16294d;
-  border: 2px solid #16294d;
-=======
-  color:  #16294d;
-  border: 2px solid  #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  color: #0d1b2a;
+  border: 2px solid #0d1b2a;
 }
 
 /* Subtle hover effect with smooth transition */
 .secondary:hover {
   background-color: #f0f4f8;
-<<<<<<< HEAD
-  border-color: #16294d;
-=======
-  border-color:  #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  border-color: #0d1b2a;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(32, 95, 100, 0.2);
 }
@@ -350,18 +332,14 @@ body {
 .features h3 {
   font-size: 32px;
   margin-bottom: 50px;
-  color: #16294d;
+  color: #0d1b2a;
   font-weight: bold;
 }
 
 /* Container for side-by-side feature blocks */
 .feature-blocks {
   max-width: 1100px;
-<<<<<<< HEAD
   margin: 40px auto;
-=======
-  margin: 40px auto ;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -373,11 +351,7 @@ body {
   display: flex;
   align-items: center;
   gap: 30px;
-<<<<<<< HEAD
   /* background-color: white;  */
-=======
-   /* background-color: white;  */
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
   border-radius: 10px;
   aspect-ratio: 20/9;
   padding: 40px;
@@ -436,11 +410,7 @@ body {
 .feature-content h4 {
   font-size: 22px;
   margin: 12px 0 8px 0;
-<<<<<<< HEAD
-  color: #16294d;
-=======
-  color:  #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  color: #0d1b2a;
   transition: color 0.3s ease;
 }
 
@@ -453,11 +423,7 @@ body {
 
 .feature-icon {
   font-size: 40px;
-<<<<<<< HEAD
-  color: #16294d;
-=======
-  color:  #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  color: #0d1b2a;
   margin-bottom: 12px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -465,11 +431,7 @@ body {
 /* Icon animation on hover */
 .feature-block:hover .feature-icon {
   transform: scale(1.08) rotate(3deg);
-<<<<<<< HEAD
-  color: #16294d;
-=======
-  color:  #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  color: #0d1b2a;
 }
 
 /* Responsive design for feature blocks */
@@ -491,10 +453,6 @@ body {
     min-width: 100%;
     aspect-ratio: 4/5;
     object-fit: cover;
-<<<<<<< HEAD
-=======
-
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
   }
 
   .feature-content h4 {
@@ -541,11 +499,7 @@ body {
 .testimonials h3 {
   font-size: 32px;
   margin-bottom: 50px;
-<<<<<<< HEAD
-  color: #16294d;
-=======
-  color:  #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  color: #0d1b2a;
   font-weight: bold;
 }
 
@@ -603,11 +557,7 @@ body {
 /* Reviewer avatar */
 .reviewer-avatar {
   font-size: 60px;
-<<<<<<< HEAD
-  color: #16294d;
-=======
-  color:  #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  color: #0d1b2a;
   margin-bottom: 15px;
   transition: transform 0.3s ease;
 }
@@ -638,7 +588,7 @@ body {
 .reviewer-name {
   font-size: 18px;
   font-weight: bold;
-  color: #16294d;
+  color: #0d1b2a;
   margin: 10px 0 5px 0;
 }
 
@@ -663,11 +613,7 @@ body {
 
 /* ================= FOOTER ================= */
 .footer {
-<<<<<<< HEAD
-  background-color: #16294d;
-=======
-  background-color:   #16294d;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
+  background-color: #0d1b2a;
   color: white;
   text-align: center;
   padding: 20px;

@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #203864;
+  background-color: #0d1b2a;
   padding: 15px 30px;
 }
 
@@ -67,7 +67,7 @@ body {
 /* ---------- Typography ---------- */
 .auth-card h2 {
   margin-bottom: 25px;
-  color: #203864;
+  color: #0d1b2a;
   font-size: clamp(22px, 2.5vw, 28px);
 }
 
@@ -86,7 +86,7 @@ body {
   width: 100%;
   padding: clamp(14px, 1.8vw, 18px);
   margin-top: 18px;
-  background-color: #203864;
+  background-color: #0d1b2a;
   color: white;
   border: none;
   border-radius: 6px;
@@ -97,7 +97,7 @@ body {
 }
 
 .auth-card button:hover {
-  background-color: #16294d;
+  background-color: #0d1b2a;
 }
 
 /* ---------- Messages ---------- */
@@ -108,7 +108,7 @@ body {
 
 /* ---------- Links ---------- */
 .auth-card a {
-  color: #203864;
+  color: #0d1b2a;
   font-weight: bold;
   text-decoration: none;
 }
@@ -126,7 +126,7 @@ body {
 }
 /* ================= FOOTER ================= */
 .footer {
-  background-color: #203864;
+  background-color: #0d1b2a;
   color: white;
   text-align: center;
   padding: 15px;
