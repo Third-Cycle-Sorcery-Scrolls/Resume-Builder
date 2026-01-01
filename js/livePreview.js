@@ -17,9 +17,7 @@ let educationData = [
   },
 ];
 
-let skillsData = [
-  { name: "Skill 1", percent: 90 }
-];
+let skillsData = [{ name: "Skill 1", percent: 90 }];
 
 // --- INITIAL RENDER ---
 window.onload = function () {
@@ -51,16 +49,19 @@ function updatePhoto(input) {
 // --- EXPERIENCE SECTION ---
 function renderExperienceInputs() {
   const container = document.getElementById("experience_inputs");
-  const header = document.getElementById('experience_header');
+  const header = document.getElementById("experience_header");
   container.innerHTML = "";
 
-  if(experienceData.length === 0){
-    header.style.display = "none";
+  if (experienceData.length === 0) {
+    if (header) {
+      header.style.display = "none";
+    }
     return;
-  }else{
-    header.style.display = "block";
+  } else {
+    if (header) {
+      header.style.display = "block";
+    }
   }
-
 
   experienceData.forEach((job, index) => {
     container.innerHTML += `
@@ -86,11 +87,11 @@ function renderExperienceInputs() {
 function renderExperiencePreview() {
   const container = document.getElementById("experience_section");
   container.innerHTML = "";
-  experienceData.forEach(job => {
+  experienceData.forEach((job) => {
     // Split description by new lines to make list items
     const listItems = job.desc
       .split("\n")
-      .map(line => (line.trim() ? `<li>${line}</li>` : ""))
+      .map((line) => (line.trim() ? `<li>${line}</li>` : ""))
       .join("");
 
     container.innerHTML += `
@@ -152,17 +153,21 @@ function renderEducationInputs() {
 
 function renderEducationPreview() {
   const container = document.getElementById("education_section");
-  const header = document.getElementById('education_header');
+  const header = document.getElementById("education_header");
   container.innerHTML = "";
-  
-  if(educationData.length === 0){
-    header.style.display = "none";
+
+  if (educationData.length === 0) {
+    if (header) {
+      header.style.display = "none";
+    }
     return;
-  }else {
-    header.style.display = "block";
+  } else {
+    if (header) {
+      header.style.display = "block";
+    }
   }
 
-  educationData.forEach(edu => {
+  educationData.forEach((edu) => {
     container.innerHTML += `
             <div style="margin-bottom: 10px;">
               <p><strong>${edu.degree}</strong></p>
@@ -212,17 +217,21 @@ function renderSkillsInputs() {
 
 function renderSkillsPreview() {
   const container = document.getElementById("skills_section");
-  const header = document.getElementById('skills_header');
+  const header = document.getElementById("skills_header");
   container.innerHTML = "";
 
-  if(skillsData.length === 0){
-    header.style.display = "none";
+  if (skillsData.length === 0) {
+    if (header) {
+      header.style.display = "none";
+    }
     return;
-  }else{
-    header.style.display = "block";
+  } else {
+    if (header) {
+      header.style.display = "block";
+    }
   }
 
-  skillsData.forEach(skill => {
+  skillsData.forEach((skill) => {
     container.innerHTML += `
             <div class="skill-item">
               <div class="skill-label">
