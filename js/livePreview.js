@@ -17,7 +17,9 @@ let educationData = [
   },
 ];
 
-let skillsData = [{ name: "Skill 1", percent: 90 }];
+let skillsData = [
+  { name: "Skill 1", percent: 90 }
+];
 
 // --- INITIAL RENDER ---
 window.onload = function () {
@@ -49,25 +51,35 @@ function updatePhoto(input) {
 // --- EXPERIENCE SECTION ---
 function renderExperienceInputs() {
   const container = document.getElementById("experience_inputs");
+  const header = document.getElementById('experience_header');
   container.innerHTML = "";
+
+  if(experienceData.length === 0){
+    header.style.display = "none";
+    return;
+  }else{
+    header.style.display = "block";
+  }
+
+
   experienceData.forEach((job, index) => {
     container.innerHTML += `
-            <div class="dynamic-list-item">
-              <button class="btn btn-remove" onclick="removeExperience(${index})">X</button>
-              <div class="form-group">
-                <input placeholder="Job Title" value="${job.title}" oninput="updateExperience(${index}, 'title', this.value)">
-              </div>
-              <div class="form-group">
-                <input placeholder="Date" value="${job.date}" oninput="updateExperience(${index}, 'date', this.value)">
-              </div>
-              <div class="form-group">
-                <input placeholder="Company" value="${job.company}" oninput="updateExperience(${index}, 'company', this.value)">
-              </div>
-              <div class="form-group">
-                <textarea placeholder="Description (One bullet per line)" oninput="updateExperience(${index}, 'desc', this.value)">${job.desc}</textarea>
-              </div>
-            </div>
-          `;
+        <div class="dynamic-list-item">
+          <button class="btn btn-remove" onclick="removeExperience(${index})">X</button>
+          <div class="form-group">
+            <input placeholder="Job Title" value="${job.title}" oninput="updateExperience(${index}, 'title', this.value)" required minlength="3" maxlength="100" type="text">
+          </div>
+          <div class="form-group">
+            <input placeholder="YYYY" value="${job.date}" oninput="updateExperience(${index}, 'date', this.value)" required type="number" min="1900" max="2100">
+          </div>
+          <div class="form-group">
+            <input placeholder="Company" value="${job.company}" oninput="updateExperience(${index}, 'company', this.value)" required minlength="3">
+          </div>
+          <div class="form-group">
+            <textarea placeholder="Description (One bullet per line)" oninput="updateExperience(${index}, 'desc', this.value)">${job.desc}</textarea>
+          </div>
+        </div>
+      `;
   });
 }
 
@@ -122,25 +134,34 @@ function renderEducationInputs() {
   container.innerHTML = "";
   educationData.forEach((edu, index) => {
     container.innerHTML += `
-            <div class="dynamic-list-item">
-              <button class="btn btn-remove" onclick="removeEducation(${index})">X</button>
-              <div class="form-group">
-                <input placeholder="Degree" value="${edu.degree}" oninput="updateEducation(${index}, 'degree', this.value)">
-              </div>
-              <div class="form-group">
-                <input placeholder="School" value="${edu.school}" oninput="updateEducation(${index}, 'school', this.value)">
-              </div>
-              <div class="form-group">
-                <input placeholder="Year" value="${edu.year}" oninput="updateEducation(${index}, 'year', this.value)">
-              </div>
-            </div>
-          `;
+        <div class="dynamic-list-item">
+          <button class="btn btn-remove" onclick="removeEducation(${index})">X</button>
+          <div class="form-group">
+            <input placeholder="Degree" value="${edu.degree}" oninput="updateEducation(${index}, 'degree', this.value)" required minlength="3">
+          </div>
+          <div class="form-group">
+            <input placeholder="School" value="${edu.school}" oninput="updateEducation(${index}, 'school', this.value)" required minlength="3">
+          </div>
+          <div class="form-group">
+            <input placeholder="YYYY" value="${edu.year}" oninput="updateEducation(${index}, 'year', this.value)" required type="number" min="1900" max="2100">
+          </div>
+        </div>
+      `;
   });
 }
 
 function renderEducationPreview() {
   const container = document.getElementById("education_section");
+  const header = document.getElementById('education_header');
   container.innerHTML = "";
+  
+  if(educationData.length === 0){
+    header.style.display = "none";
+    return;
+  }else {
+    header.style.display = "block";
+  }
+
   educationData.forEach(edu => {
     container.innerHTML += `
             <div style="margin-bottom: 10px;">
@@ -178,7 +199,7 @@ function renderSkillsInputs() {
             <div class="dynamic-list-item">
               <button class="btn btn-remove" onclick="removeSkill(${index})">X</button>
               <div class="form-group">
-                <input placeholder="Skill Name" value="${skill.name}" oninput="updateSkill(${index}, 'name', this.value)">
+                <input placeholder="Skill Name" value="${skill.name}" oninput="updateSkill(${index}, 'name', this.value)" required minlength="3" type="text">
               </div>
               <div class="form-group">
                 <label>Level: <span id="skill_val_${index}">${skill.percent}%</span></label>
@@ -191,7 +212,16 @@ function renderSkillsInputs() {
 
 function renderSkillsPreview() {
   const container = document.getElementById("skills_section");
+  const header = document.getElementById('skills_header');
   container.innerHTML = "";
+
+  if(skillsData.length === 0){
+    header.style.display = "none";
+    return;
+  }else{
+    header.style.display = "block";
+  }
+
   skillsData.forEach(skill => {
     container.innerHTML += `
             <div class="skill-item">
