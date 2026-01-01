@@ -211,9 +211,6 @@ body {
   color: #333;
   text-align: center;
   padding: 60px 20px;
-<<<<<<< HEAD
-  background-color: white;
-=======
   background-color:white;
 }
 
@@ -223,7 +220,6 @@ body {
   max-width: 900px;
   padding: 5px;
   width: 100%;
->>>>>>> abe1fdf7b852fde9a5c76efaf07aaeba015a1cf3
 }
 
 /* Hero content container */
