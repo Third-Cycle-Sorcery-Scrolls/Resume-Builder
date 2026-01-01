@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Builder Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./admin.css" />
+  </head>
+  <body data-theme="light">
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Sidebar navigation">
+        <div class="sidebar__brand">
+          <div class="brand-mark" aria-hidden="true">RB</div>
+          <div>
+            <p class="brand-title">Resume Builder</p>
+            <p class="brand-sub">Admin</p>
+          </div>
+          <button
+            class="sidebar__toggle"
+            aria-label="Collapse sidebar"
+            aria-expanded="true"
+          >
+            ☰
+          </button>
+        </div>
+        <nav>
+          <ul class="nav" role="list">
+            <li>
+              <button class="nav__link is-active" data-view="dashboard">
+                <i class="fas fa-tachometer-alt"></i> <span>Dashboard</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav__link" data-view="users">
+                <i class="fas fa-users"></i> <span>Users</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav__link" data-view="templates">
+                <i class="fas fa-file-alt"></i> <span>Resume Templates</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav__link" data-view="statistics">
+                <i class="fas fa-chart-bar"></i> <span>Statistics</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav__link" data-view="settings">
+                <i class="fas fa-cog"></i> <span>Settings</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <div class="topbar__left">
+            <p class="breadcrumb" id="breadcrumb">Dashboard</p>
+          </div>
+          <div class="topbar__right">
+            <div class="admin-chip" aria-label="Admin name">Alex Admin</div>
+            <button class="btn ghost" id="logoutBtn" type="button">
+              Logout
+            </button>
+          </div>
+        </header>
+
+        <main id="view" class="content" role="main" tabindex="-1"></main>
+      </div>
+    </div>
+
+    <!-- User Modal -->
+    <div class="modal" data-modal="user" aria-hidden="true">
+      <div
+        class="modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="userModalTitle"
+      >
+        <div class="modal__header">
+          <h2 id="userModalTitle">Add User</h2>
+          <button class="btn icon" data-close-modal aria-label="Close modal">
+            ✕
+          </button>
+        </div>
+        <form id="userForm" class="form" novalidate>
+          <input type="hidden" name="id" />
+          <label class="field">
+            <span>Name</span>
+            <input name="name" type="text" required placeholder="Alex Morgan" />
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="alex@example.com"
+            />
+          </label>
+          <label class="field">
+            <span>Role</span>
+            <select name="role" required>
+              <option value="Admin">Admin</option>
+              <option value="User" selected>User</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select name="status" required>
+              <option value="Active" selected>Active</option>
+              <option value="Blocked">Blocked</option>
+            </select>
+          </label>
+          <div class="modal__footer">
+            <button class="btn ghost" type="button" data-close-modal>
+              Cancel
+            </button>
+            <button class="btn primary" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Template Modal -->
+    <div class="modal" data-modal="template" aria-hidden="true">
+      <div
+        class="modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="templateModalTitle"
+      >
+        <div class="modal__header">
+          <h2 id="templateModalTitle">Add Template</h2>
+          <button class="btn icon" data-close-modal aria-label="Close modal">
+            ✕
+          </button>
+        </div>
+        <form id="templateForm" class="form" novalidate>
+          <input type="hidden" name="id" />
+          <label class="field">
+            <span>Template Name</span>
+            <input
+              name="name"
+              type="text"
+              required
+              placeholder="Elegant Blue"
+            />
+          </label>
+          <label class="field">
+            <span>Status</span>
+            <select name="status" required>
+              <option value="Active" selected>Active</option>
+              <option value="Inactive">Inactive</option>
+            </select>
+          </label>
+          <div class="modal__footer">
+            <button class="btn ghost" type="button" data-close-modal>
+              Cancel
+            </button>
+            <button class="btn primary" type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
