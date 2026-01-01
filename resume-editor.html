@@ -9,187 +9,189 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
-    <link id="template-style" rel="stylesheet"/>
+    <link id="template-style" rel="stylesheet" />
   </head>
   <body>
     <div class="editor-panel">
       <h2>Edit Resume</h2>
 
-        <form id="resumeForm" >
-          <!--Personal Info Sec-->
-          <div class="section-header">
-            <span>Personal Info</span>
-          </div>
+      <form id="resumeForm">
+        <!--Personal Info Sec-->
+        <div class="section-header">
+          <span>Personal Info</span>
+        </div>
 
-          <div class="form-group">
-            <label for="input_name">Full Name *</label>
+        <div class="form-group">
+          <label for="input_name">Full Name *</label>
+          <input
+            type="text"
+            id="input_name"
+            name="name"
+            value="Amanuel Ayele"
+            required
+            minlength="3"
+            maxlength="100"
+            oninput="updateText('user_name', this.value)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="input_title">Job Title *</label>
+          <input
+            type="text"
+            id="input_title"
+            name="title"
+            required
+            placeholder="Software Engineer"
+            value="BACKEND DEVELOPER"
+            minlength="2"
+            maxlength="100"
+            oninput="updateText('user_title', this.value)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="input_photo">Profile Photo</label>
+          <div class="file-upload">
             <input
-              type="text"
-              id="input_name"
-              name="name"
-              value="Amanuel Ayele"
-              required
-              minlength="3"
-              maxlength="100"
-              oninput="updateText('user_name', this.value)"
+              type="file"
+              id="input_photo"
+              name="photo"
+              accept="image/*"
+              onchange="updatePhoto(this)"
             />
+            <div class="file-info" id="fileInfo">No file chosen</div>
           </div>
+          <div class="error-message" id="photoError"></div>
+        </div>
 
-          <div class="form-group">
-            <label for="input_title">Job Title *</label>
-            <input
-              type="text"
-              id="input_title"
-              name="title"
-              required
-              placeholder = "Software Engineer"
-              value="BACKEND DEVELOPER"
-              minlength="2"
-              maxlength="100"
-              oninput="updateText('user_title', this.value)"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="input_photo">Profile Photo</label>
-            <div class="file-upload">
-              <input
-                type="file"
-                id="input_photo"
-                name="photo"
-                accept="image/*"
-                onchange="updatePhoto(this)"
-              />
-              <div class="file-info" id="fileInfo">No file chosen</div>
-              </div>
-              <div class="error-message" id="photoError"></div>
-          </div>
-
-          <div class="form-group">
-            <label for="input_summary">Professional Summary</label>
-            <textarea
-              id="input_summary"
-              name="summary"
-              required
-              minlength="30"
-              maxlength="300"
-              rows="4"
-              placeholder="Describe your professional background, skills, and carrer objectives..."
-              oninput="updateText('user_summary', this.value)"
-            >Experienced Backend Developer with 5+ years specializing in scalable web applications. Proficient in Node.js, Python, and cloud technologies. Passionate about clean architecture and system optimization.</textarea>
-            <div class="char-count">
-            </div>
-            <div class="error-message" id="summaryError"></div>
-          </div>
-
-          <div class="section-header">
-            <sapn>Contact Information</sapn>
-          </div>
-
-          <div class="form-group">
-            <label>Phone *</label>
-            <input
-              type="tel"
-              id="contact_phone_input"
-              name="phone"
-              value="+251 911 22 33 44"
-              placeholder="+251 91 23 45 67"
-              pattern="^\+?[\d\s]{10,}$"
-              required
-              oninput="updateText('contact_phone', this.value)"
-            />
-            <div class="error-message" id="phoneError"></div>
-          </div>
-
-          <div class="form-group">
-            <label>Email *</label>
-            <input
-              type="email"
-              id="contact_email_input"
-              name="email"
-              required
-              value="amanuel@example.com"
-              required
-              oninput="updateText('contact_email', this.value)"
-            />
-          </div>
-
-          <div class="form-group">
-            <label>Address</label>
-            <input
-              type="text"
-              id="contact_address_input"
-              name="address"
-              value="Addis Ababa, Ethiopia"
-              oninput="updateText('contact_address', this.value)"
-            />
-          </div>
-
-          <div class="form-group">
-            <label>Website/Portfolio</label>
-            <input
-              type="url"
-              id="contact_website_input"
-              name="website"
-              value="https://www.amanuel.com"
-              placeholder="https://yourportfolio.com"
-              oninput="updateText('contact_website', this.value)"
-            />
-          </div>
-
-          <div class="form-group">
-            <label>LinkedIn Profile</label>
-            <input
-              type="url"
-              id="contact_linkedin_input"
-              name="linkedin"
-              value="https://linkedin.com/in/amanuel_li"
-              placeholder="https://(www\.)?lindedin\.com/.*"
-              oninput="updateText('contact_linkedin', this.value)"
-            />
-          </div>
-
-          <div class="section-header">
-            <span>Experience</span>
-          </div>
-          <div id="experience_inputs">
-            <!--Experience entries will be added here -->
-          </div>
-          <button type="button" class="btn" onclick="addExperience()">
-            <span class="icon">+</span> Add Job
-          </button>
-
-          <div class="section-header">
-            <span>Education</span>
-          </div>
-          <div id="education_inputs">
-            <!--Education entries-->
-          </div>
-          <button type="button" class="btn" onclick="addEducation()">
-            <span class="icon">+</span> Add Education</button>
-
-          <div class="section-header">
-            <span>Skills</span>
-          </div>
-          <div id="skills_inputs">
-            <!--Skills-->
-          </div>
-          <button class="btn" onclick="addSkill()">
-            <span class="icon">+</span> Add Skill</button>
-
-          <br /><br />
-          <button type="submit">Submit</button>
-          <button
-            disabled
-            type="button"
-            class="btn"
-            id="printBtn"
-            style="width:100%; background-color:#333;"
-            onclick="window.print()"
+        <div class="form-group">
+          <label for="input_summary">Professional Summary</label>
+          <textarea
+            id="input_summary"
+            name="summary"
+            required
+            minlength="30"
+            maxlength="300"
+            rows="4"
+            placeholder="Describe your professional background, skills, and carrer objectives..."
+            oninput="updateText('user_summary', this.value)"
           >
-            <span class="icon">📄</span> Download / Print PDF
-          </button>
-        </form>
+Experienced Backend Developer with 5+ years specializing in scalable web applications. Proficient in Node.js, Python, and cloud technologies. Passionate about clean architecture and system optimization.</textarea
+          >
+          <div class="char-count"></div>
+          <div class="error-message" id="summaryError"></div>
+        </div>
+
+        <div class="section-header">
+          <sapn>Contact Information</sapn>
+        </div>
+
+        <div class="form-group">
+          <label>Phone *</label>
+          <input
+            type="tel"
+            id="contact_phone_input"
+            name="phone"
+            value="+251 911 22 33 44"
+            placeholder="+251 91 23 45 67"
+            pattern="^\+?[\d\s]{10,}$"
+            required
+            oninput="updateText('contact_phone', this.value)"
+          />
+          <div class="error-message" id="phoneError"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Email *</label>
+          <input
+            type="email"
+            id="contact_email_input"
+            name="email"
+            required
+            value="amanuel@example.com"
+            required
+            oninput="updateText('contact_email', this.value)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Address</label>
+          <input
+            type="text"
+            id="contact_address_input"
+            name="address"
+            value="Addis Ababa, Ethiopia"
+            oninput="updateText('contact_address', this.value)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>Website/Portfolio</label>
+          <input
+            type="url"
+            id="contact_website_input"
+            name="website"
+            value="https://www.amanuel.com"
+            placeholder="https://yourportfolio.com"
+            oninput="updateText('contact_website', this.value)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>LinkedIn Profile</label>
+          <input
+            type="url"
+            id="contact_linkedin_input"
+            name="linkedin"
+            value="https://linkedin.com/in/amanuel_li"
+            placeholder="https://(www\.)?lindedin\.com/.*"
+            oninput="updateText('contact_linkedin', this.value)"
+          />
+        </div>
+
+        <div class="section-header">
+          <span>Experience</span>
+        </div>
+        <div id="experience_inputs">
+          <!--Experience entries will be added here -->
+        </div>
+        <button type="button" class="btn" onclick="addExperience()">
+          <span class="icon">+</span> Add Job
+        </button>
+
+        <div class="section-header">
+          <span>Education</span>
+        </div>
+        <div id="education_inputs">
+          <!--Education entries-->
+        </div>
+        <button type="button" class="btn" onclick="addEducation()">
+          <span class="icon">+</span> Add Education
+        </button>
+
+        <div class="section-header">
+          <span>Skills</span>
+        </div>
+        <div id="skills_inputs">
+          <!--Skills-->
+        </div>
+        <button type="button" class="btn" onclick="addSkill()">
+          <span class="icon">+</span> Add Skill
+        </button>
+
+        <br /><br />
+        <button type="submit">Submit</button>
+        <button
+          type="button"
+          class="btn"
+          id="printBtn"
+          style="width:100%; background-color:#333;"
+          onclick="window.print()"
+        >
+          <span class="icon">📄</span> Download / Print PDF
+        </button>
+      </form>
     </div>
 
     <div class="preview-panel">
@@ -235,9 +237,7 @@
 
           <div>
             <div class="section-title">Skills</div>
-            <div id="skills_section">
-
-            </div>
+            <div id="skills_section"></div>
           </div>
         </div>
 
@@ -255,7 +255,6 @@
 
       const link = document.getElementById("template-style");
       link.href = `css/${template}.css`;
-
     </script>
     <script src="/js/livePreview.js"></script>
   </body>

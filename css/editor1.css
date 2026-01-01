@@ -107,7 +107,22 @@ body {
   padding: 4px 8px;
   font-size: 11px;
 }
+/* asjdhals
+as
+dadasf
 
+sadf
+as
+fads
+
+fs
+ad
+fs
+dadf
+
+ds
+af
+s*/
 /* --- RIGHT PANEL: PREVIEW AREA --- */
 .preview-panel {
   flex: 1;
@@ -260,5 +275,12 @@ body {
     box-shadow: none;
     margin: 0;
     width: 100%;
+  }
+  .header {
+    /* background-color: var(--accent); */
+    /* grid-column: 1 / -1; */
+    color: var(--accent);
+    /* text-align: center; */
+    /* padding: 22px; */
   }
 }
